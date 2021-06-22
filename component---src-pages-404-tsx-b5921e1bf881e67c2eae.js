@@ -1,0 +1,2 @@
+(self.webpackChunkntnyq_com=self.webpackChunkntnyq_com||[]).push([[218],{938:function(n,e,t){"use strict";t.r(e);var u=t(7294);e.default=function(){return u.createElement("div",null,u.createElement("h1",null,"Page not found"))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-b5921e1bf881e67c2eae.js.map

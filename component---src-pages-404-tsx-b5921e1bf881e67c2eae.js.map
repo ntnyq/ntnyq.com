@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://ntnyq.com/./src/pages/404.tsx"],"names":[],"mappings":"+HAQA,UAN2B,kBACzB,2BACE","file":"component---src-pages-404-tsx-b5921e1bf881e67c2eae.js","sourcesContent":["import React from 'react'\n\nconst NotFound: React.FC = () => (\n  <div>\n    <h1>Page not found</h1>\n  </div>\n)\n\nexport default NotFound\n"],"sourceRoot":""}
