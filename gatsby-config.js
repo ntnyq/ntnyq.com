@@ -8,6 +8,10 @@ const path = require('path')
 const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+  },
+
   siteMetadata: {
     title: `ntnyq`,
     description: `ntnyq`,
