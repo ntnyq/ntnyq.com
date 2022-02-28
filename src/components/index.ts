@@ -3,4 +3,4 @@ export { default as Head } from './Head'
 
 export { default as Hero } from './Hero'
 
-export { default as Ukraine } from './Badge/UKRaine'
+export { default as Ukraine } from './Badge/Ukraine'
