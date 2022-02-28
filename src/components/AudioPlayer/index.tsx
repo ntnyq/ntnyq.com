@@ -9,8 +9,8 @@ interface Props {
   options: ReactJkMusicPlayerProps
 }
 
-const VideoPlayer: React.FC<Props> = ({ children, options }) => (
+const AudioPlayer: React.FC<Props> = ({ children, options }) => (
   <ReactJkMusicPlayer {...options}>{children}</ReactJkMusicPlayer>
 )
 
-export default VideoPlayer
+export default AudioPlayer

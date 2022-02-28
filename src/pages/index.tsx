@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { App, Head, Hero } from '../components'
+import { App, Head, Hero, Ukraine } from '../components'
 
 const query = graphql`
   query {
@@ -26,6 +26,7 @@ const Index: React.FC = () => {
       <App>
         <Hero />
       </App>
+      <Ukraine />
     </React.Fragment>
   )
 }
