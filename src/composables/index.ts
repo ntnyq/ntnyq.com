@@ -1,1 +1,1 @@
-export const isDark = useDark()
+export * from './dark'

@@ -10,8 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import { isDark } from '@/composables'
-const toggleDark = () => {
-  isDark.value = !isDark.value
-}
+import { toggleDark } from '@/composables'
 </script>
