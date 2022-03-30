@@ -6,7 +6,7 @@
 
 html {
   background-color: var(--c-bg);
-  overflow: scroll;
+  overflow: auto;
 }
 
 html.dark {
