@@ -119,8 +119,9 @@ export default defineConfig({
   ],
 
   ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
+    script: `async`,
+    formatting: `minify`,
+    format: `cjs`,
     onFinished() {
       generateSiteMap()
     },

@@ -45,7 +45,8 @@
     "vite-plugin-pages": "^0.22.0",
     "vite-plugin-pwa": "^0.11.13",
     "vite-ssg": "^0.19.2",
-    "vite-ssg-sitemap": "^0.2.2"
+    "vite-ssg-sitemap": "^0.2.2",
+    "workbox-window": "^6.5.3"
   },
   "dependencies": {
     "@gtm-support/vue-gtm": "^1.4.0",
