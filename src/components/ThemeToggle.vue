@@ -1,12 +1,12 @@
 <template>
-  <a
+  <span
     @click="toggleDark"
     title="Toggle Color Scheme"
-    class="select-none"
+    class="select-none cursor-pointer"
   >
     <IRiMoonLine v-if="isDark" />
     <IRiSunLine v-else />
-  </a>
+  </span>
 </template>
 
 <script setup lang="ts">

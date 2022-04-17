@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@gtm-support/vue-gtm': ^1.4.0
   '@iconify/json': ^2.1.28
   '@ntnyq/prettier-config': ^0.3.1
   '@octokit/rest': ^18.12.0
@@ -38,6 +39,7 @@ specifiers:
   vue-router: ^4.0.14
 
 dependencies:
+  '@gtm-support/vue-gtm': 1.4.0_vue@3.2.33
   '@vueuse/core': 8.2.6_vue@3.2.33
   '@vueuse/head': 0.7.6_vue@3.2.33
   nprogress: 0.2.0
@@ -1241,6 +1243,24 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
     dev: true
+
+  /@gtm-support/core/1.2.0:
+    resolution: {integrity: sha512-zBXBkQAmC5+cUyyHDy8syiiqRLnPV1hspFVncSaRhf62IQ0sn2opLr696uHvNmuD/+dup4IIB6qBu7F/NBqdgg==}
+    dev: false
+
+  /@gtm-support/vue-gtm/1.4.0_vue@3.2.33:
+    resolution: {integrity: sha512-X5MgJbkxZLPV6SVtjgfJ4b3o/W/kqJvFrcK6nw4E0DxWI7H7SXwYAkSnNpfTAkp6POAF9d1w/4iPCll8OB6bvA==}
+    peerDependencies:
+      vue: ^3.0.0
+    peerDependenciesMeta:
+      vue-router:
+        optional: true
+    dependencies:
+      '@gtm-support/core': 1.2.0
+      vue: 3.2.33
+    optionalDependencies:
+      vue-router: 4.0.14_vue@3.2.33
+    dev: false
 
   /@iconify/json/2.1.28:
     resolution: {integrity: sha512-6n2SkdiW0DUpGpfq3nKM7V6nlmeLJAz4V3X/lrFOyyVu0cDVOHmtXe4A0/Ur/75NtTDMBtH17jODWHOKmsDz/Q==}

@@ -1,13 +1,13 @@
+import pages from '~pages'
+import { ViteSSG } from 'vite-ssg'
+import type { RouterScrollBehavior } from 'vue-router'
+import App from './App.vue'
+
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import '@/styles/main.css'
 import '@/styles/prose.css'
 import '@/styles/markdown.css'
-import pages from '~pages'
-import { ViteSSG } from 'vite-ssg'
-import NPprogress from 'nprogress'
-import type { RouterScrollBehavior } from 'vue-router'
-import App from './App.vue'
 
 const routes = pages.map(route => ({
   ...route,
@@ -20,16 +20,10 @@ const scrollBehavior: RouterScrollBehavior = (_, __, savedPosition) =>
 
 export const createApp = ViteSSG(
   App,
-  { routes, scrollBehavior },
-  ({ router, isClient }) => {
-    if (isClient) {
-      router.beforeEach(() => {
-        NPprogress.start()
-      })
-
-      router.afterEach(() => {
-        NPprogress.done()
-      })
-    }
-  }
+  { routes, scrollBehavior, base: import.meta.env.BASE_URL },
+  ctx => {
+    Object.values(import.meta.globEager(`./modules/*.ts`)).forEach(i =>
+      i.install?.(ctx),
+    )
+  },
 )

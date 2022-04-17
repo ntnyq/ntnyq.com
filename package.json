@@ -48,6 +48,7 @@
     "vite-ssg-sitemap": "^0.2.2"
   },
   "dependencies": {
+    "@gtm-support/vue-gtm": "^1.4.0",
     "@vueuse/core": "^8.2.6",
     "@vueuse/head": "^0.7.6",
     "nprogress": "^0.2.0",
