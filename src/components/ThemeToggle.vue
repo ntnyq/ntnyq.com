@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import { toggleDark } from '@/composables'
+import { isDark, toggleDark } from '@/composables'
 </script>

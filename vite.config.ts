@@ -3,12 +3,14 @@ import fs from 'fs-extra'
 import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import matter from 'gray-matter'
+import UnoCSS from 'unocss/vite'
 import prism from 'markdown-it-prism'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
+import { VitePWA } from 'vite-plugin-pwa'
 import Icons from 'unplugin-icons/vite'
-import UnoCSS from 'unocss/vite'
+import generateSiteMap from 'vite-ssg-sitemap'
 import { presetIcons, presetUno } from 'unocss'
 import iconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -60,11 +62,7 @@ export default defineConfig({
       extensions: [`vue`, `md`],
       dts: true,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      resolvers: [
-        iconsResolver({
-          // enabledCollections: [``],
-        }),
-      ],
+      resolvers: [iconsResolver({})],
     }),
 
     AutoImport({
@@ -90,5 +88,46 @@ export default defineConfig({
       defaultClass: `inline`,
       defaultStyle: `vertical-align: sub;`,
     }),
+
+    VitePWA({
+      registerType: `autoUpdate`,
+      includeAssets: [],
+      manifest: {
+        name: `ntnyq`,
+        short_name: `ntnyq`,
+        theme_color: `#ffffff`,
+        icons: [
+          {
+            src: `/static/icons/icon-48x48.png`,
+            sizes: `48x48`,
+            type: `image/png`,
+          },
+          {
+            src: `/static/icons/icon-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/static/icons/icon-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+          {
+            src: `/static/icons/icon-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: `any maskable`,
+          },
+        ],
+      },
+    }),
   ],
+
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    onFinished() {
+      generateSiteMap()
+    },
+  },
 })
