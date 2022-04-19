@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     IRiMoonLine: typeof import('~icons/ri/moon-line')['default']
     IRiSunLine: typeof import('~icons/ri/sun-line')['default']
     IUilGithubAlt: typeof import('~icons/uil/github-alt')['default']
+    Nana: typeof import('./src/components/Nana.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
