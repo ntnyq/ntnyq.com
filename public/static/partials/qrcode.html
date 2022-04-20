@@ -38,13 +38,13 @@
   <div id="qrcode"></div>
   <script>
     (() => {
-      const host = 'ntnyq.com'
-      const qrcode = document.getElementById('qrcode')
-      const url = new URLSearchParams(location.search).get('url')
+      const host = `ntnyq.com`
+      const qrcode = document.getElementById(`qrcode`)
+      const url = new URLSearchParams(location.search).get(`url`)
 
       console.log(url)
 
-      if (!url) return console.error(`Url is required`)
+      if (!url) return console.error(`URL is required`)
 
       const text = decodeURIComponent(url)
 
@@ -54,7 +54,7 @@
           return
         }
       } catch (error) {
-        console.error('The url required be a valid url!', error)
+        console.error(`The url required be a valid url!`, error)
         return
       }
 
@@ -62,8 +62,8 @@
         text,
         width: 200,
         height: 200,
-        colorDark: '#000',
-        colorLight: '#fff',
+        colorDark: `#000`,
+        colorLight: `#fff`,
         correctLevel: QRCode.CorrectLevel.Q
       })
     })()

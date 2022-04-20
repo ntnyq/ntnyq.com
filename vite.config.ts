@@ -60,12 +60,13 @@ export default defineConfig({
 
     Components({
       extensions: [`vue`, `md`],
-      dts: true,
+      dts: `src/components.d.ts`,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [iconsResolver({})],
     }),
 
     AutoImport({
+      dts: `src/auto-imports.d.ts`,
       imports: [`vue`, `vue-router`, `@vueuse/core`, `@vueuse/head`],
     }),
 
