@@ -1,13 +1,9 @@
 /* https://github.com/antfu/prism-theme-vars */
-@import 'prism-theme-vars/base.css';
+@import "prism-theme-vars/base.css";
 
 :root {
   --prism-font-size: 0.9rem;
-  --prism-font-family: 'Fira Code', monospace;
-}
-
-:root {
-  --prism-font-family: 'Input Mono', monospace;
+  --prism-font-family: "Input Mono", monospace;
 }
 
 html:not(.dark) {
@@ -176,7 +172,7 @@ h6:focus .header-anchor {
   overflow-x: hidden;
   text-overflow: ellipsis;
   opacity: 0;
-  transition: all .4s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .table-of-contents:hover {

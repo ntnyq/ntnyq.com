@@ -1,21 +1,29 @@
 {
   "name": "ntnyq.com",
-  "private": true,
   "version": "0.0.2",
-  "description": "__TODO__",
+  "private": true,
   "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
+  "scripts": {
+    "build": "vite-ssg build",
+    "dev": "vite --open --host"
+  },
   "lint-staged": {
     "*.{yml,js,ts,md}": "prettier --write"
   },
-  "scripts": {
-    "dev": "vite --port 9527 --open --host",
-    "build": "vite-ssg build"
-  },
   "prettier": "@ntnyq/prettier-config",
+  "dependencies": {
+    "@gtm-support/vue-gtm": "^1.4.0",
+    "@vueuse/core": "^8.3.0",
+    "@vueuse/head": "^0.7.6",
+    "nprogress": "^0.2.0",
+    "prism-theme-vars": "^0.2.2",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
+  },
   "devDependencies": {
     "@iconify/json": "^2.1.30",
     "@ntnyq/prettier-config": "^0.3.1",
@@ -33,8 +41,8 @@
     "lint-staged": "^12.4.0",
     "markdown-it": "^12.3.2",
     "markdown-it-prism": "^2.2.4",
+    "pnpm": "^7.0.0",
     "prettier": "^2.6.2",
-    "pug": "^3.0.2",
     "typescript": "^4.6.3",
     "unocss": "^0.31.8",
     "unplugin-auto-import": "^0.7.1",
@@ -48,13 +56,5 @@
     "vite-ssg-sitemap": "^0.2.4",
     "workbox-window": "^6.5.3"
   },
-  "dependencies": {
-    "@gtm-support/vue-gtm": "^1.4.0",
-    "@vueuse/core": "^8.3.0",
-    "@vueuse/head": "^0.7.6",
-    "nprogress": "^0.2.0",
-    "prism-theme-vars": "^0.2.2",
-    "vue": "^3.2.33",
-    "vue-router": "^4.0.14"
-  }
+  "packageManager": "pnpm@7.0.0"
 }
