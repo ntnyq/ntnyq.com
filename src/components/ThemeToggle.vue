@@ -1,6 +1,6 @@
 <template>
   <span
-    @click="toggleDark"
+    @click="toggleDark()"
     title="Toggle Color Scheme"
     class="select-none cursor-pointer"
   >

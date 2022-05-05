@@ -11,7 +11,6 @@ import Markdown from 'vite-plugin-md'
 import { VitePWA } from 'vite-plugin-pwa'
 import Icons from 'unplugin-icons/vite'
 import generateSiteMap from 'vite-ssg-sitemap'
-import { presetIcons, presetUno } from 'unocss'
 import iconsResolver from 'unplugin-icons/resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -31,6 +30,8 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
+
+    UnoCSS(),
 
     Pages({
       extensions: [`vue`, `md`],
@@ -68,16 +69,6 @@ export default defineConfig({
     AutoImport({
       dts: `src/auto-imports.d.ts`,
       imports: [`vue`, `vue-router`, `@vueuse/core`, `@vueuse/head`],
-    }),
-
-    UnoCSS({
-      theme: {},
-      presets: [
-        presetUno(),
-        presetIcons({
-          warn: true,
-        }),
-      ],
     }),
 
     Icons({
