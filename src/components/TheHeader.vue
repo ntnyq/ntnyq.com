@@ -8,12 +8,14 @@
       <img
         src="/static/icons/icon-72x72.png"
         alt="LOGO"
-      />
+      >
     </RouterLink>
     <nav class="nav">
-      <div class="spacer"></div>
+      <div class="spacer" />
       <div class="right">
-        <RouterLink to="/posts">Blog</RouterLink>
+        <RouterLink to="/posts">
+          Blog
+        </RouterLink>
         <a
           href="https://twitter.com/ntnyq"
           title="Twitter"

@@ -1,6 +1,6 @@
 import { resolve } from 'path'
+import { URL, fileURLToPath } from 'url'
 import fs from 'fs-extra'
-import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import matter from 'gray-matter'
 import UnoCSS from 'unocss/vite'
@@ -24,6 +24,11 @@ export default defineConfig({
 
   optimizeDeps: {
     include: [`vue`, `vue-router`, `@vueuse/core`, `@vueuse/head`],
+  },
+
+  server: {
+    host: true,
+    open: true,
   },
 
   plugins: [
@@ -54,7 +59,7 @@ export default defineConfig({
       markdownItOptions: {
         quotes: `""\'\'`,
       },
-      markdownItSetup(md) {
+      markdownItSetup (md) {
         md.use(prism)
       },
     }),
@@ -114,7 +119,7 @@ export default defineConfig({
     script: `async`,
     formatting: `minify`,
     format: `cjs`,
-    onFinished() {
+    onFinished () {
       generateSiteMap()
     },
   },

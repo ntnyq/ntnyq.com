@@ -39,14 +39,14 @@
 <script lang="ts" setup>
 import { isClient } from '@vueuse/core'
 
-const route = useRoute()
-
 defineProps({
   frontmatter: {
     type: Object,
     required: true,
   },
 })
+
+const route = useRoute()
 
 if (isClient) {
   const navigate = () => {

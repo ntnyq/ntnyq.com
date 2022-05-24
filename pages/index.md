@@ -2,7 +2,7 @@
 title: ntnyq
 ---
 
-Hey, I'm ntnyq. A frontend web developer.
+Hey, this is ntnyq. A frontend web developer.
 
 Find me on [GitHub][github], [Twitter][twitter] and [Bilibili][bilibili].
 
