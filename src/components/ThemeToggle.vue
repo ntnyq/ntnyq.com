@@ -1,8 +1,8 @@
 <template>
   <span
+    @click="toggleDark()"
     title="Toggle Color Scheme"
     class="select-none cursor-pointer"
-    @click="toggleDark()"
   >
     <IRiMoonLine v-if="isDark" />
     <IRiSunLine v-else />
