@@ -7,7 +7,7 @@ import UnoCSS from 'unocss/vite'
 import prism from 'markdown-it-prism'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
-import Markdown from 'vite-plugin-md'
+import Markdown from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
 import Icons from 'unplugin-icons/vite'
 import generateSiteMap from 'vite-ssg-sitemap'
@@ -122,5 +122,9 @@ export default defineConfig({
     onFinished () {
       generateSiteMap()
     },
+  },
+
+  ssr: {
+    noExternal: [`workbox-window`],
   },
 })

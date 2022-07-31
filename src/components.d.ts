@@ -3,6 +3,8 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     IFeatherTwitter: typeof import('~icons/feather/twitter')['default']
@@ -18,5 +20,3 @@ declare module '@vue/runtime-core' {
     ThemeToggle: typeof import('./components/ThemeToggle.vue')['default']
   }
 }
-
-export {}
