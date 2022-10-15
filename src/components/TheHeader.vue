@@ -13,9 +13,9 @@
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <RouterLink to="/posts">
+        <!-- <RouterLink to="/posts">
           Blog
-        </RouterLink>
+        </RouterLink> -->
         <a
           href="https://twitter.com/ntnyq"
           title="Twitter"
