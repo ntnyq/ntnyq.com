@@ -16,11 +16,14 @@ export default defineConfig({
   shortcuts: [],
 
   presets: [
-    presetUno({}),
-    presetIcons({}),
-    presetWebFonts({}),
-    presetAttributify({}),
+    presetUno(),
+    presetIcons(),
+    presetWebFonts(),
+    presetAttributify(),
   ],
 
-  transformers: [transformerDirectives(), transformerVariantGroup()],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
+  ],
 })

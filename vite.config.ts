@@ -4,7 +4,7 @@ import fs from 'fs-extra'
 import { defineConfig } from 'vite'
 import matter from 'gray-matter'
 import UnoCSS from 'unocss/vite'
-// import Shiki from 'markdown-it-shiki'
+import Shiki from 'markdown-it-shiki'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-vue-markdown'
@@ -64,14 +64,15 @@ export default defineConfig({
       markdownItOptions: {
         quotes: `""\'\'`,
       },
-      // markdownItSetup (md) {
-      //   md.use(Shiki, {
-      //     theme: {
-      //       light: `vitesse-light`,
-      //       dark: `vitesse-dark`,
-      //     },
-      //   })
-      // },
+      markdownItSetup (md) {
+        md.use(Shiki, {
+          theme: {
+            light: `vitesse-light`,
+            dark: `vitesse-dark`,
+          },
+          highlightLines: true,
+        })
+      },
     }),
 
     Components({
@@ -105,8 +106,8 @@ export default defineConfig({
             type: `image/png`,
           },
           {
-            src: `/static/icons/icon-192x192.png`,
-            sizes: `192x192`,
+            src: `/static/icons/icon-196x196.png`,
+            sizes: `196x196`,
             type: `image/png`,
           },
           {

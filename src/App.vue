@@ -4,7 +4,6 @@
     <RouterView />
   </main>
   <TheFooter />
-  <Nana />
 </template>
 
 <script lang="ts" setup>
