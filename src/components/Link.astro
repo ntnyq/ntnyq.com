@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: string
+  href: string
+  isBlank?: boolean
+  external?: boolean
+  className?: string
+}
+
+const { name, href, isBlank = false, external = false, className } = Astro.props
+---
+
+<a
+  href={href}
+  target={isBlank ? `_blank` : undefined}
+  class={className ?? ``}
+  rel={external ? `noreferrer` : undefined}
+  arial-label={`Link for ${name}`}
+>
+  <slot />
+</a>

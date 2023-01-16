@@ -1,10 +1,8 @@
 /**
- * @file App constants
+ * @file App config
  */
 
-export const META = Object.freeze({
-
-})
+export const META = Object.freeze({})
 
 export const IDENTITIES = Object.freeze({
   GOOGLE_TAG_MANAGER_ID: `GTM-T497H2P`,
