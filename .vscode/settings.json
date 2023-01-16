@@ -1,28 +1,39 @@
 {
-  "editor.formatOnSave": false,
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "vue",
-    "yaml",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "json5"
-  ],
+  "editor.formatOnSave": true,
+  "eslint.enable": false,
   "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[html]": {
     "editor.formatOnSave": false
   },
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.requireConfig": true,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.words": [
+    "amap",
+    "antfu",
+    "astrojs",
+    "attributify",
+    "bilibili",
+    "bumpp",
+    "changelogithub",
+    "destructurable",
+    "iconify",
+    "pnpm",
+    "shiki",
+    "unocss",
+    "unplugin",
+    "vite",
+    "vitejs",
+    "vitesse",
+    "vueuse"
+  ]
 }
