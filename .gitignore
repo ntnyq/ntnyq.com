@@ -1,10 +1,8 @@
 .DS_Store
 node_modules
+*.log*
 *.local
 dist-ssr
-
-# Log files
-*.log*
 
 dist/
 .vite-ssg-temp

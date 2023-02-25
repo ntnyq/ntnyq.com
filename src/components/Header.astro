@@ -1,0 +1,63 @@
+---
+import Link from '@/components/Link.astro'
+import ColorModeSwitch from '@/components/ColorModeSwitch.astro'
+---
+
+<header class='header z40'>
+  <nav class='nav'>
+    <div class='spacer'></div>
+    <div class='right'>
+      <Link
+        name='Twitter'
+        href='https://twitter.com/ntnyq'
+        blank
+        external
+      >
+        <div class='i-feather-twitter'></div>
+      </Link>
+      <Link
+        name='GitHub'
+        href='https://github.com/ntnyq'
+        blank
+        external
+      >
+        <div class='i-uil-github-alt'></div>
+      </Link>
+      <ColorModeSwitch />
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav {
+    display: grid;
+    grid-template-columns: auto max-content;
+    padding: 2rem;
+    width: 100vw;
+  }
+
+  .nav > * {
+    margin: auto;
+  }
+
+  .nav a {
+    transition: opacity 0.2s ease;
+    opacity: 0.6;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .nav a:hover {
+    opacity: 1;
+  }
+
+  .nav .right {
+    display: grid;
+    gap: 1.2rem;
+    grid-auto-flow: column;
+  }
+
+  .nav .right > * {
+    margin: auto;
+  }
+</style>

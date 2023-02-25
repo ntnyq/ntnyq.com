@@ -1,12 +1,4 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetUno,
-  presetWebFonts,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 
 export default defineConfig({
   theme: {},
@@ -15,15 +7,7 @@ export default defineConfig({
 
   shortcuts: [],
 
-  presets: [
-    presetUno(),
-    presetIcons(),
-    presetWebFonts(),
-    presetAttributify(),
-  ],
+  presets: [presetUno(), presetIcons()],
 
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
+  transformers: [],
 })
