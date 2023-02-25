@@ -16,6 +16,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "css.customData": ["./unocss.json"],
   "prettier.requireConfig": true,
   "cSpell.allowCompoundWords": true,
   "cSpell.words": [

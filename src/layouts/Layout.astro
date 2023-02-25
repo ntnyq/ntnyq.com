@@ -1,5 +1,8 @@
 ---
+import '@unocss/reset/tailwind.css'
+import '@/styles/style.css'
 import GA from '@/components/GA.astro'
+import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
 ---
 
@@ -63,9 +66,17 @@ import Footer from '@/components/Footer.astro'
       href='//www.googletagmanager.com'
     />
   </head>
-  <body>
-    <slot />
-    <Footer />
+  <body class='font-sans text-gray-700 dark:text-gray-200'>
+    <div
+      class='min-h-screen flex flex-col'
+      id='app'
+    >
+      <Header />
+      <main class='px-7 py-10 flex-auto'>
+        <slot />
+      </main>
+      <Footer />
+    </div>
     {import.meta.env.PROD && <GA />}
   </body>
 </html>
