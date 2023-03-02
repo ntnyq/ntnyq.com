@@ -1,9 +1,23 @@
 ---
 import Link from '@/components/Link.astro'
+import Image from '@/components/Image.astro'
 import ColorModeSwitch from '@/components/ColorModeSwitch.astro'
 ---
 
 <header class='header z40'>
+  <Link
+    className='w-10 h-10 absolute lg:fixed m-6 select-none outline-none'
+    href='/'
+    name='Home'
+  >
+    <Image
+      src='/static/icons/icon-72x72.png'
+      alt='Logo'
+      isOptimization
+      width={40}
+      height={40}
+    />
+  </Link>
   <nav class='nav'>
     <div class='spacer'></div>
     <div class='right'>
@@ -23,7 +37,7 @@ import ColorModeSwitch from '@/components/ColorModeSwitch.astro'
       >
         <div class='i-uil-github-alt'></div>
       </Link>
-      <ColorModeSwitch />
+      <!-- <ColorModeSwitch /> -->
     </div>
   </nav>
 </header>
