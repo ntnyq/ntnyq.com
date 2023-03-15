@@ -1,17 +1,41 @@
----
-import Link from '@/components/Link.astro'
----
-
-<footer class='footer mt-10 mb-6 m-auto text-center opacity-50 prose'>
-  <span class='text-sm'>
-    <Link
-      href='https://creativecommons.org/licenses/by-nc/4.0/'
-      blank
-      external
-      name='CC BY-NC 4.0'
-    >
-      CC BY-NC 4.0
-    </Link>
-    &emsp;<span>2021 - PRESENT&nbsp;&copy;&nbsp;ntnyq</span>
-  </span>
+<footer class="border-t border-gray-200 dark:border-slate-800">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+      <ul class="justify-center flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
+        <li>
+          <a
+            href="https://twitter.com/ntnyq"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Twitter"
+						class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+          >
+            <div class="i-carbon-logo-twitter w-5 h-5"></div>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/ntnyq"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="GitHub"
+						class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+          >
+            <div class="i-carbon-logo-github w-5 h-5"></div>
+          </a>
+        </li>
+      </ul>
+			<div class="text-center text-gray-700 md:mr-4 dark:text-slate-400">
+        <p class="text-lg">
+          <a
+            href='https://creativecommons.org/licenses/by-nc/4.0/'
+            target="_blank"
+          >
+            CC BY-NC 4.0
+          </a>
+          &emsp;<span>2021 - PRESENT&nbsp;&copy;&nbsp;ntnyq</span>
+        </p>
+			</div>
+    </div>
+  </div>
 </footer>

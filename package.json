@@ -1,56 +1,54 @@
 {
   "name": "ntnyq.com",
+  "type": "module",
   "version": "0.0.2",
   "private": true,
-  "packageManager": "pnpm@7.27.0",
+  "packageManager": "pnpm@8.0.0",
   "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
   "scripts": {
+    "astro": "astro",
     "build": "astro build",
+    "build:netlify": "OUTPUT=netlify astro build",
+    "build:vercel": "OUTPUT=vercel astro build",
     "check": "astro check",
     "dev": "astro dev",
-    "fmt": "prettier -w .",
-    "fmt:check": "prettier --check .",
     "prepare": "husky install",
     "preview": "astro preview",
     "release": "bumpp"
   },
   "dependencies": {
-    "@astrojs/image": "^0.15.1",
-    "@astrojs/mdx": "^0.17.2",
-    "@astrojs/partytown": "^1.0.3",
-    "@astrojs/rss": "^2.1.1",
-    "@astrojs/sitemap": "^1.1.0",
-    "astro": "^2.0.17",
-    "workbox-window": "^6.5.4"
+    "@astrolib/seo": "^0.3.0",
+    "@nanostores/solid": "^0.3.2",
+    "@unocss/reset": "^0.50.6",
+    "astro": "^2.1.7",
+    "dayjs": "^1.11.7",
+    "nanostores": "^0.7.4",
+    "solid-js": "^1.6.16"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.30",
-    "@ntnyq/prettier-config": "^1.4.0",
+    "@astrojs/netlify": "^2.2.0",
+    "@astrojs/node": "^5.1.0",
+    "@astrojs/solid-js": "^2.1.0",
+    "@astrojs/vercel": "^3.2.1",
+    "@iconify/json": "^2.2.40",
+    "@ntnyq/prettier-config": "^1.6.1",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "18.14.5",
-    "@types/nprogress": "^0.2.0",
-    "@unocss/postcss": "^0.50.3",
-    "@unocss/reset": "^0.50.3",
-    "@vite-pwa/astro": "^0.0.4",
-    "dayjs": "^1.11.7",
-    "fs-extra": "^11.1.0",
+    "@types/node": "18.15.10",
+    "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^7.28.0",
-    "prettier": "^2.8.4",
-    "prettier-plugin-astro": "^0.8.0",
-    "rollup": "^3.18.0",
-    "sharp": "^0.31.3",
-    "typescript": "^4.9.5",
-    "unocss": "^0.50.3",
-    "vite": "^4.1.4"
+    "pnpm": "^8.0.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.2",
+    "unocss": "^0.50.6"
   },
+  "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
-    "*.{js,ts,vue,yml,yaml,json,md}": "prettier --write"
+    "*": "prettier -wu"
   }
 }

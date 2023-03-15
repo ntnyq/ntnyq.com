@@ -1,5 +1,3 @@
-@import './main.css';
-@import './prose.css';
-@import './markdown.css';
-
-@unocss all;
+@import "./main.css";
+@import "./prose.css";
+@import "./markdown.css";

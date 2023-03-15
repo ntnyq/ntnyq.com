@@ -3,7 +3,9 @@ node_modules
 *.log*
 *.local
 dist-ssr
-
+.vercel
 dist/
 dev-dist
-.vite-ssg-temp
+
+# generated types
+.astro/

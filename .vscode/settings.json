@@ -1,23 +1,20 @@
 {
   "editor.formatOnSave": true,
   "eslint.enable": false,
-  "[typescript]": {
-    "editor.formatOnSave": true
-  },
-  "[html]": {
-    "editor.formatOnSave": false
-  },
-  "[markdown]": {
-    "editor.formatOnSave": false
-  },
-  "prettier.configPath": "",
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[astro]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "css.customData": ["./unocss.json"],
-  "prettier.requireConfig": true,
+  "eslint.validate": [
+    "vue",
+    "yaml",
+    "html",
+    "json",
+    "jsonc",
+    "json5",
+    "astro",
+    "markdown",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
   "cSpell.allowCompoundWords": true,
   "cSpell.words": [
     "amap",
@@ -31,6 +28,9 @@
     "iconify",
     "pnpm",
     "shiki",
+    "sindresorhus",
+    "solidjs",
+    "tsconfigs",
     "unocss",
     "unplugin",
     "vite",

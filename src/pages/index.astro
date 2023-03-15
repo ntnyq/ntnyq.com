@@ -1,45 +1,59 @@
 ---
-import Link from '@/components/Link.astro'
-import Layout from '@/layouts/Layout.astro'
+import Link from 'src/components/Link.astro'
+import Layout from 'src/layouts/PageLayout.astro'
+
+import { META } from 'src/config'
+
+const meta = {
+  title: META.title,
+}
 ---
 
-<Layout>
-  <div class='prose m-auto pb-8'>
-    <h1>ntnyq</h1>
-    <p>Hey, this is ntnyq. A frontend web developer.</p>
-    <p>
-      Find me on <Link
-        href='https://github.com/ntnyq'
-        name='GitHub'
-        external
-        blank
-      >
-        GitHub
-      </Link>,
-      <Link
-        href='https://twitter.com/ntnyq'
-        name='Twitter'
-        external
-        blank
-      >
-        Twitter
-      </Link> and
-      <Link
-        href='https://space.bilibili.com/40199161'
-        name='Bilibili'
-        external
-        blank
-      >
-        Bilibili
-      </Link>.
-    </p>
-    <p>
-      Mail me at <Link
-        href='mailto:ntnyq13@gmail.com'
-        name='Email'
-      >
-        ntnyq13@gmail.com
-      </Link>.
-    </p>
-  </div>
+<Layout {meta}>
+  <section>
+    <div class="flex md:h-screen max-w-6xl mx-auto px-4 sm:px-6 md:-mt-20">
+      <div class="m-auto py-12 md:py-20">
+        <div class="text-center pb-10 md:pb-16">
+          <div class='prose m-auto pb-8'>
+            <h1>ntnyq</h1>
+            <p>Hey, this is ntnyq. A frontend web developer.</p>
+            <p>
+              Find me on <Link
+                href='https://github.com/ntnyq'
+                name='GitHub'
+                external
+                blank
+              >
+                GitHub
+              </Link>,
+              <Link
+                href='https://twitter.com/ntnyq'
+                name='Twitter'
+                external
+                blank
+              >
+                Twitter
+              </Link> and
+              <Link
+                href='https://space.bilibili.com/40199161'
+                name='Bilibili'
+                external
+                blank
+              >
+                Bilibili
+              </Link>.
+            </p>
+            <p>
+              Mail me at <Link
+                href='mailto:ntnyq13@gmail.com'
+                name='Email'
+              >
+                ntnyq13@gmail.com
+              </Link>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

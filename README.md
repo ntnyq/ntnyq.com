@@ -2,9 +2,6 @@
 
 My personal website.
 
-## Prior Art
+## Design and Code
 
-Deeply thank to [antfu](https://github.com/antfu) for his amazing work.
-
--   [antfu.me](https://github.com/antfu/antfu.me)
--   [vitesse](https://github.com/antfu/vitesse)
+[sindresorhus](https://sindresorhus.com)

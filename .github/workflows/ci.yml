@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,4 +17,5 @@ jobs:
       - uses: pnpm/action-setup@v2
 
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
       - run: pnpm run build
