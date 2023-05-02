@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.2",
   "private": true,
-  "packageManager": "pnpm@8.0.0",
+  "packageManager": "pnpm@8.3.1",
   "license": "MIT",
   "author": {
     "name": "ntnyq",
@@ -23,29 +23,29 @@
   "dependencies": {
     "@astrolib/seo": "^0.3.0",
     "@nanostores/solid": "^0.3.2",
-    "@unocss/reset": "^0.50.6",
-    "astro": "^2.1.7",
+    "@unocss/reset": "^0.51.8",
+    "astro": "^2.3.3",
     "dayjs": "^1.11.7",
-    "nanostores": "^0.7.4",
-    "solid-js": "^1.6.16"
+    "nanostores": "^0.8.1",
+    "solid-js": "^1.7.4"
   },
   "devDependencies": {
-    "@astrojs/netlify": "^2.2.0",
-    "@astrojs/node": "^5.1.0",
+    "@astrojs/netlify": "^2.2.2",
+    "@astrojs/node": "^5.1.2",
     "@astrojs/solid-js": "^2.1.0",
-    "@astrojs/vercel": "^3.2.1",
-    "@iconify/json": "^2.2.40",
-    "@ntnyq/prettier-config": "^1.6.1",
+    "@astrojs/vercel": "^3.2.5",
+    "@iconify/json": "^2.2.58",
+    "@ntnyq/prettier-config": "^1.7.2",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "18.15.10",
+    "@types/node": "18.16.3",
     "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^8.0.0",
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.2",
-    "unocss": "^0.50.6"
+    "pnpm": "^8.3.1",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4",
+    "unocss": "^0.51.8"
   },
   "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
