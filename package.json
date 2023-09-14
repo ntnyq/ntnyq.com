@@ -3,7 +3,6 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@8.7.5",
   "license": "MIT",
   "author": {
     "name": "ntnyq",
@@ -21,6 +20,7 @@
     "release": "bumpp"
   },
   "dependencies": {
+    "@astrojs/check": "^0.2.0",
     "@astrolib/seo": "^0.6.0",
     "@nanostores/solid": "^0.4.2",
     "@unocss/reset": "^0.55.7",
@@ -43,7 +43,6 @@
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^8.7.5",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
     "unocss": "^0.55.7"
