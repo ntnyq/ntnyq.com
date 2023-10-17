@@ -20,24 +20,24 @@
     "release": "bumpp"
   },
   "dependencies": {
-    "@astrojs/check": "^0.2.0",
+    "@astrojs/check": "^0.2.1",
     "@astrolib/seo": "^0.6.0",
     "@nanostores/solid": "^0.4.2",
-    "@unocss/reset": "^0.55.7",
-    "astro": "^3.0.13",
-    "dayjs": "^1.11.9",
-    "nanostores": "^0.9.3",
-    "solid-js": "^1.7.11"
+    "@unocss/reset": "^0.56.5",
+    "astro": "^3.3.1",
+    "dayjs": "^1.11.10",
+    "nanostores": "^0.9.4",
+    "solid-js": "^1.8.1"
   },
   "devDependencies": {
-    "@astrojs/netlify": "^3.0.1",
-    "@astrojs/node": "^6.0.0",
-    "@astrojs/solid-js": "^3.0.1",
-    "@astrojs/vercel": "^4.0.5",
-    "@iconify/json": "^2.2.115",
-    "@ntnyq/prettier-config": "^1.13.0",
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "20.6.0",
+    "@astrojs/netlify": "^3.0.3",
+    "@astrojs/node": "^6.0.3",
+    "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/vercel": "^5.0.2",
+    "@iconify/json": "^2.2.129",
+    "@ntnyq/prettier-config": "^1.14.0",
+    "@types/fs-extra": "^11.0.2",
+    "@types/node": "20.8.6",
     "bumpp": "^9.2.0",
     "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
@@ -45,7 +45,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
-    "unocss": "^0.55.7"
+    "unocss": "^0.56.5"
   },
   "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
