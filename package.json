@@ -1,54 +1,51 @@
 {
   "name": "ntnyq.com",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
+  "description": "__TODO__",
+  "keywords": [],
   "license": "MIT",
   "author": {
     "name": "ntnyq",
     "email": "ntnyq13@gmail.com"
   },
   "scripts": {
-    "astro": "astro",
-    "build": "astro build",
-    "build:netlify": "OUTPUT=netlify astro build",
-    "build:vercel": "OUTPUT=vercel astro build",
-    "check": "astro check",
-    "dev": "astro dev",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "postinstall": "nuxt prepare",
     "prepare": "husky install",
-    "preview": "astro preview",
+    "preview": "nuxt preview",
     "release": "bumpp"
   },
   "dependencies": {
-    "@astrojs/check": "^0.2.1",
-    "@astrolib/seo": "^0.6.0",
-    "@nanostores/solid": "^0.4.2",
-    "@unocss/reset": "^0.56.5",
-    "astro": "^3.3.1",
-    "dayjs": "^1.11.10",
-    "nanostores": "^0.9.4",
-    "solid-js": "^1.8.1"
+    "@pinia/nuxt": "^0.5.1",
+    "@vueuse/nuxt": "^10.6.1",
+    "pinia": "^2.1.7"
   },
   "devDependencies": {
-    "@astrojs/netlify": "^3.0.3",
-    "@astrojs/node": "^6.0.3",
-    "@astrojs/solid-js": "^3.0.2",
-    "@astrojs/vercel": "^5.0.2",
-    "@iconify/json": "^2.2.129",
-    "@ntnyq/prettier-config": "^1.14.0",
-    "@types/fs-extra": "^11.0.2",
-    "@types/node": "20.8.6",
+    "@iconify/json": "^2.2.151",
+    "@ntnyq/eslint-config": "^1.19.0",
+    "@ntnyq/prettier-config": "^1.19.0",
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "^3.3.2",
+    "@unocss/nuxt": "^0.57.7",
     "bumpp": "^9.2.0",
-    "fs-extra": "^11.1.1",
+    "eslint": "^8.54.0",
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2",
-    "unocss": "^0.56.5"
+    "nuxt": "^3.8.2",
+    "prettier": "^3.1.0",
+    "tsx": "^4.5.0",
+    "typescript": "^5.3.2",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
   },
   "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
-    "*": "prettier -wu"
+    "*.{css}": "prettier --write",
+    "*.{js,ts,mjs,md,json,yml,yaml,html,vue}": "eslint --fix"
   }
 }

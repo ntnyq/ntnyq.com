@@ -1,6 +1,9 @@
 {
-  "editor.formatOnSave": true,
-  "eslint.enable": false,
+  "eslint.enable": true,
+  "prettier.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.eslint.fixAll": "always"
+  },
   "eslint.validate": [
     "vue",
     "yaml",
@@ -8,7 +11,6 @@
     "json",
     "jsonc",
     "json5",
-    "astro",
     "markdown",
     "javascript",
     "typescript",
@@ -16,25 +18,5 @@
     "typescriptreact"
   ],
   "cSpell.allowCompoundWords": true,
-  "cSpell.words": [
-    "amap",
-    "antfu",
-    "astrojs",
-    "attributify",
-    "bilibili",
-    "bumpp",
-    "changelogithub",
-    "destructurable",
-    "iconify",
-    "shiki",
-    "sindresorhus",
-    "solidjs",
-    "tsconfigs",
-    "unocss",
-    "unplugin",
-    "vite",
-    "vitejs",
-    "vitesse",
-    "vueuse"
-  ]
+  "cSpell.words": ["bumpp", "changelogithub", "iconify", "Nuxt", "nuxtjs", "pinia", "vueuse"]
 }
