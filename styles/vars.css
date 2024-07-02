@@ -1,0 +1,22 @@
+:root {
+  color-scheme: light;
+  --c-fg: #232323;
+  --c-bg: #fff;
+  --c-border: #eee;
+  --c-scroll: #d9d9d9;
+  --c-scroll-hover: #bbbbbb;
+}
+
+.dark {
+  color-scheme: dark;
+  --c-fg: #fff;
+  --c-bg: #1e1e1e;
+  --c-border: #333;
+  --c-scroll: #333333;
+  --c-scroll-hover: #555555;
+}
+
+:root {
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+  --un-default-border-color: var(--c-border);
+}

@@ -1,4 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "OUTPUT=vercel astro build"
+  "github": {},
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run generate",
+  "outputDirectory": ".output/public"
 }

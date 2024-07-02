@@ -4,17 +4,23 @@ on:
   pull_request:
     branches:
       - main
+      - next
   push:
     branches:
       - main
+      - next
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
 
-      - run: bun i
-      - run: bun run check
-      - run: bun run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
+      - run: pnpm run generate
+      - run: pnpm run typecheck
