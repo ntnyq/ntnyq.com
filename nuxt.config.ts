@@ -4,7 +4,7 @@
  */
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-shiki'],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content'],
 
   css: [
     '@unocss/reset/tailwind.css',
@@ -50,8 +50,15 @@ export default defineNuxtConfig({
 
   vue: {},
 
-  shiki: {
-    bundledLangs: ['javascript', 'typescript', 'json', 'html', 'css', 'markdown'],
-    bundledThemes: ['vitesse-light', 'vitesse-dark'],
+  /**
+   * @see {@link https://content.nuxt.com/get-started/configuration}
+   */
+  content: {
+    highlight: {
+      theme: {
+        default: 'vitesse-light',
+        dark: 'vitesse-dark',
+      },
+    },
   },
 })
