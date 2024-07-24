@@ -4,7 +4,7 @@
  */
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content'],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content', '@vite-pwa/nuxt', '@nuxt/image'],
 
   css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
@@ -34,6 +34,36 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true,
+  },
+
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      orientation: 'landscape-primary',
+      icons: [
+        {
+          src: '/icons/icon-196x196.png',
+          sizes: '196x196',
+          type: 'image/png',
+        },
+        {
+          src: '/icons/icon-196x196.png',
+          sizes: '196x196',
+          type: 'image/png',
+        },
+        {
+          src: '/icons/icon-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+      ],
+      theme_color: '#000000',
+    },
+    workbox: {
+      globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
+      runtimeCaching: [],
+    },
   },
 
   // Disable SSR when building
