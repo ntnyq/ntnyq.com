@@ -47,7 +47,7 @@ export async function generatePost() {
         {
           type: 'confirm',
           name: 'draft',
-          message: 'Sve as draft?',
+          message: 'Save as draft?',
         },
       ],
       {

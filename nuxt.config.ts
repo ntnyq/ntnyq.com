@@ -6,12 +6,7 @@
 export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content'],
 
-  css: [
-    '@unocss/reset/tailwind.css',
-    '~/styles/font.css',
-    '~/styles/vars.css',
-    '~/styles/index.css',
-  ],
+  css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
   imports: {
     dirs: [
@@ -61,4 +56,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2024-07-25',
 })

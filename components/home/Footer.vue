@@ -7,14 +7,7 @@
       @click="toggleDark"
       class="cursor-pointer rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700"
     >
-      <div
-        v-if="isDark"
-        class="i-radix-icons-moon"
-      />
-      <div
-        v-else
-        class="i-radix-icons-sun"
-      />
+      <div class="i-radix-icons:sun dark:i-radix-icons:moon" />
     </div>
   </footer>
 </template>

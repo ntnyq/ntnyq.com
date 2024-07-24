@@ -1,13 +1,8 @@
 <script lang="ts" setup>
-interface SocialItem {
-  icon?: string
-  link?: string
-  class?: string
-  text?: string
-}
+import type { ISocial } from '~/types'
 
 defineProps<{
-  item: SocialItem
+  item: ISocial
 }>()
 </script>
 
@@ -23,7 +18,7 @@ defineProps<{
       v-if="item.icon"
       class="text-xl"
     >
-      <div :class="item.icon"></div>
+      <div :class="item.icon" />
     </div>
     <div
       v-if="item.text"

@@ -2,12 +2,8 @@
 
 body {
   background-color: var(--c-bg);
-  font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.title {
-  font-family: 'Hubot Sans', sans-serif;
-}
 
 /* Color Mode transition */
 ::view-transition-old(root),
