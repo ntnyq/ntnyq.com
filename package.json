@@ -24,7 +24,7 @@
     "@nuxt/image": "^1.7.0",
     "@unocss/nuxt": "^0.62.2",
     "@vite-pwa/nuxt": "^0.10.0",
-    "@vueuse/nuxt": "^10.11.1",
+    "@vueuse/nuxt": "^11.0.0",
     "floating-vue": "^5.2.2",
     "nuxt": "^3.12.4"
   },
