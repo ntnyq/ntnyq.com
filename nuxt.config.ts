@@ -9,12 +9,7 @@ export default defineNuxtConfig({
   css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
   imports: {
-    dirs: [
-      './composables',
-      //
-      './composables/state',
-      './utils',
-    ],
+    dirs: ['./composables', './composables/state', './utils'],
   },
 
   components: {
@@ -87,5 +82,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-07-25',
+  compatibilityDate: '2024-09-10',
 })

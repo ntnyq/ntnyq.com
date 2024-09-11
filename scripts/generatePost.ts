@@ -1,7 +1,7 @@
 import { writeFile } from 'node:fs/promises'
-import prompts from 'prompts'
 import consola from 'consola'
 import { colors } from 'consola/utils'
+import prompts from 'prompts'
 import { resolve } from '~/scripts/utils'
 import type { Answers } from 'prompts'
 

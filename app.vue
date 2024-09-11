@@ -7,7 +7,7 @@
 
     <template #fallback>
       <div class="h-screen flex flex-center gap-1 text-3xl font-bold">
-        <div class="i-ri:loader-4-fill animate-spin"></div>
+        <div class="i-ri:loader-4-fill animate-spin" />
         Loading...
       </div>
     </template>
