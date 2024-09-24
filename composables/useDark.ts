@@ -6,7 +6,7 @@ export const isDark = useDark()
 
 const isAppearanceTransition =
   typeof document !== 'undefined' &&
-  document.startViewTransition &&
+  !!document.startViewTransition &&
   !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 /**

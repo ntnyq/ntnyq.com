@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "useGitignore": true,
+  "allowCompoundWords": true,
+  "words": [
+    "Attributify",
+    "bilibili",
+    "bumpp",
+    "changelogithub",
+    "gstatic",
+    "Hubot",
+    "iconify",
+    "nuxt",
+    "shiki",
+    "unocss",
+    "vitesse",
+    "vueuse"
+  ]
+}
