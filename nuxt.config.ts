@@ -19,6 +19,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'ntnyq',
+      htmlAttrs: {
+        lang: 'en',
+      },
       meta: [
         { name: 'keywords', content: 'ntnyq' },
         { name: 'description', content: 'ntnyq' },
