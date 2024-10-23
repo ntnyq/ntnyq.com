@@ -3,6 +3,8 @@
  * @see {@link https://nuxt.com/docs/api/configuration/nuxt-config}
  */
 
+import { META } from './composables/constants'
+
 export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content', '@vite-pwa/nuxt', '@nuxt/image'],
 
@@ -18,25 +20,37 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'ntnyq',
+      title: META.appName,
       htmlAttrs: {
         lang: 'en',
       },
       meta: [
-        { name: 'keywords', content: 'ntnyq' },
-        { name: 'description', content: 'ntnyq' },
+        { name: 'keywords', content: META.appName },
+        { name: 'description', content: META.appDescription },
+        { name: 'twitter:title', content: META.appName },
+        { name: 'twitter:domain', content: META.appUrl },
+        { name: 'twitter:creator', content: '@ntnyq' },
+        { name: 'twitter:url', content: META.appUrl },
+        { name: 'twitter:image', content: META.appImage },
+        { name: 'twitter:description', content: META.appDescription },
+        { property: 'og:title', content: META.appName },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: META.appUrl },
+        { property: 'og:image', content: META.appImage },
+        { property: 'og:description', content: META.appDescription },
       ],
       viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
     },
   },
 
-  devtools: {
-    enabled: true,
-  },
-
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
+      name: META.appName,
+      short_name: META.appName,
+      description: META.appDescription,
+      background_color: '#ffffff',
+      theme_color: '#000000',
       orientation: 'landscape-primary',
       icons: [
         {
@@ -56,22 +70,22 @@ export default defineNuxtConfig({
           purpose: 'any maskable',
         },
       ],
-      theme_color: '#000000',
     },
     workbox: {
-      globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
+      maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
+      globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}'],
       runtimeCaching: [],
     },
   },
 
-  // Disable SSR when building
-  ssr: false,
+  future: {
+    compatibilityVersion: 4,
+  },
 
-  plugins: [],
-
-  vite: {},
-
-  vue: {},
+  experimental: {
+    // should be disabled when `ssr: false`
+    payloadExtraction: false,
+  },
 
   /**
    * @see {@link https://content.nuxt.com/get-started/configuration}
@@ -85,5 +99,18 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-09-10',
+  devtools: {
+    enabled: true,
+  },
+
+  // Disable SSR when building
+  ssr: false,
+
+  plugins: [],
+
+  vite: {},
+
+  vue: {},
+
+  compatibilityDate: '2024-10-24',
 })

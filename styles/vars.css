@@ -5,6 +5,7 @@
   --c-border: #eee;
   --c-scrollbar: #d9d9d9;
   --c-scrollbar-hover: #bbbbbb;
+  --un-default-border-color: var(--c-border);
 }
 
 .dark {
@@ -14,9 +15,4 @@
   --c-border: #333;
   --c-scrollbar: #333333;
   --c-scrollbar-hover: #555555;
-}
-
-:root {
-  scrollbar-color: var(--c-scrollbar) var(--c-bg);
-  --un-default-border-color: var(--c-border);
 }

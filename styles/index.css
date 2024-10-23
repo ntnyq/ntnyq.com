@@ -4,6 +4,9 @@ body {
   background-color: var(--c-bg);
 }
 
+* {
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+}
 
 /* Color Mode transition */
 ::view-transition-old(root),
