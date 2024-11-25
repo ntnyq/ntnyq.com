@@ -1,5 +1,3 @@
-<script lang="ts" setup></script>
-
 <template>
   <footer class="mt-12 flex items-center justify-between">
     <p class="text-sm op-40">ntnyq &copy; 2024</p>

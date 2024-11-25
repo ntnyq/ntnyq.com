@@ -1,5 +1,3 @@
-<script lang="ts" setup></script>
-
 <template>
   <header class="mt-12 md:mt-18">
     <h1 class="title text-5xl font-bold">

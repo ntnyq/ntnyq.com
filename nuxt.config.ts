@@ -6,7 +6,14 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@nuxt/content', '@vite-pwa/nuxt', '@nuxt/image'],
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@vite-pwa/nuxt',
+    '@nuxt/image',
+  ],
 
   css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
@@ -78,6 +85,12 @@ export default defineNuxtConfig({
     },
   },
 
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
+
   future: {
     compatibilityVersion: 4,
   },
@@ -112,5 +125,5 @@ export default defineNuxtConfig({
 
   vue: {},
 
-  compatibilityDate: '2024-10-24',
+  compatibilityDate: '2024-11-26',
 })
