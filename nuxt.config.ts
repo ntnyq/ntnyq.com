@@ -83,9 +83,9 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
 
-  plugins: [],
-
   pwa: {
+    base: '/',
+    injectRegister: 'auto',
     manifest: {
       background_color: '#ffffff',
       description: META.appDescription,
@@ -101,29 +101,34 @@ export default defineNuxtConfig({
           type: 'image/png',
         },
         {
-          purpose: 'any maskable',
           sizes: '512x512',
           src: '/icons/icon-512x512.png',
           type: 'image/png',
         },
       ],
+      id: 'com.ntnyq.website',
       name: META.appName,
       orientation: 'landscape-primary',
+      protocol_handlers: [],
       short_name: META.appName,
       theme_color: '#000000',
     },
     registerType: 'autoUpdate',
+    scope: '/',
     workbox: {
       globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}'],
       maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
-      runtimeCaching: [],
+      // https://github.com/vite-pwa/nuxt/issues/53
+      navigateFallback: undefined,
+      runtimeCaching: [
+        {
+          handler: 'NetworkFirst',
+          urlPattern: '/',
+        },
+      ],
     },
   },
 
   // Disable SSR when building
   ssr: false,
-
-  vite: {},
-
-  vue: {},
 })
