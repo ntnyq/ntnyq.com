@@ -13,26 +13,26 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  safelist: [],
-
-  shortcuts: {
-    'flex-center': 'flex items-center justify-center',
-  },
-
   presets: [
     presetUno(),
     presetIcons({
-      scale: 1.2,
       autoInstall: true,
       extraProperties: {
         color: 'inherit',
         // Avoid crushing of icons in crowded situations
         'min-width': '1.2em',
       },
+      scale: 1.2,
     }),
     presetTypography(),
     presetAttributify(),
   ],
+
+  safelist: [],
+
+  shortcuts: {
+    'flex-center': 'flex items-center justify-center',
+  },
 
   transformers: [transformerDirectives(), transformerVariantGroup()],
 })
