@@ -6,8 +6,14 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
+  compatibilityDate: '2024-12-23',
+
+  css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
+
   app: {
     head: {
+      title: META.appName,
+      viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
       htmlAttrs: {
         lang: 'en',
       },
@@ -26,16 +32,15 @@ export default defineNuxtConfig({
         { content: META.appImage, property: 'og:image' },
         { content: META.appDescription, property: 'og:description' },
       ],
-      title: META.appName,
-      viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
     },
   },
-
-  compatibilityDate: '2024-11-26',
 
   components: {
     dirs: ['./components/home'],
   },
+
+  // Disable SSR when building
+  ssr: false,
 
   /**
    * @see {@link https://content.nuxt.com/get-started/configuration}
@@ -48,8 +53,6 @@ export default defineNuxtConfig({
       },
     },
   },
-
-  css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
   devtools: {
     enabled: true,
@@ -86,9 +89,17 @@ export default defineNuxtConfig({
   pwa: {
     base: '/',
     injectRegister: 'auto',
+    registerType: 'autoUpdate',
+    scope: '/',
     manifest: {
       background_color: '#ffffff',
       description: META.appDescription,
+      id: 'com.ntnyq.website',
+      name: META.appName,
+      orientation: 'landscape-primary',
+      protocol_handlers: [],
+      short_name: META.appName,
+      theme_color: '#000000',
       icons: [
         {
           sizes: '196x196',
@@ -106,15 +117,7 @@ export default defineNuxtConfig({
           type: 'image/png',
         },
       ],
-      id: 'com.ntnyq.website',
-      name: META.appName,
-      orientation: 'landscape-primary',
-      protocol_handlers: [],
-      short_name: META.appName,
-      theme_color: '#000000',
     },
-    registerType: 'autoUpdate',
-    scope: '/',
     workbox: {
       globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}'],
       maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
@@ -128,7 +131,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  // Disable SSR when building
-  ssr: false,
 })
