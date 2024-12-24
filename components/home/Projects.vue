@@ -6,13 +6,13 @@ const browserExtensions: IProject[] = [
     name: 'Prettier Now',
     url: 'https://github.com/ntnyq/prettier-now',
     description: 'Yet another @prettier browser extension',
-    icon: 'i-fluent-emoji-flat:toolbox',
+    icon: 'i-vscode-icons:file-type-prettier',
   },
   {
     name: 'Filter Now',
     url: 'https://github.com/ntnyq/filter-now',
     description: 'An offline tool help user to add CSS based filter to image',
-    icon: 'i-fluent-emoji-flat:framed-picture',
+    icon: 'i-vscode-icons:file-type-css',
   },
 ]
 const eslintPackages: IProject[] = [
@@ -41,6 +41,28 @@ const typedefPackages: IProject[] = [
     url: 'https://github.com/ntnyq/vscode-extension-manifest',
     description: 'VSCode extension manifest type definitions, validators, and utilities',
     icon: 'i-vscode-icons:file-type-vscode',
+  },
+]
+const jsonSchemaPackages: IProject[] = [
+  {
+    name: 'weapp-json-schema',
+    url: 'https://github.com/ntnyq/weapp-json-schema',
+    description: 'Json schema definitions for weapp',
+    icon: 'i-vscode-icons:file-type-light-json-schema dark:i-vscode-icons:file-type-json-schema',
+  },
+]
+const unocssPackages: IProject[] = [
+  {
+    name: 'unocss-presets',
+    url: 'https://github.com/ntnyq/unocss-presets',
+    description: ' A collection of unocss presets',
+    icon: 'i-vscode-icons:file-type-unocss',
+  },
+  {
+    name: 'iconify-collections',
+    url: 'https://github.com/ntnyq/iconify-collections',
+    description: 'Some iconify collections.',
+    icon: 'i-vscode-icons:file-type-unocss',
   },
 ]
 </script>
@@ -73,6 +95,26 @@ const typedefPackages: IProject[] = [
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <ProjectItem
           v-for="item in typedefPackages"
+          :key="item.name"
+          :item="item"
+        />
+      </div>
+    </div>
+    <div class="relative py-2">
+      <h3 class="py-2 text-xl font-semibold op-75">UnoCSS</h3>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <ProjectItem
+          v-for="item in unocssPackages"
+          :key="item.name"
+          :item="item"
+        />
+      </div>
+    </div>
+    <div class="relative py-2">
+      <h3 class="py-2 text-xl font-semibold op-75">Json Schema</h3>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <ProjectItem
+          v-for="item in jsonSchemaPackages"
           :key="item.name"
           :item="item"
         />

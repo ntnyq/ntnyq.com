@@ -15,6 +15,7 @@
     "shiki",
     "unocss",
     "vitesse",
-    "vueuse"
+    "vueuse",
+    "weapp"
   ]
 }

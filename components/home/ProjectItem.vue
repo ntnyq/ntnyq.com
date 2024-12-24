@@ -16,13 +16,13 @@ defineProps<{
     <div class="h-full flex items-center justify-center">
       <div
         v-if="item.icon"
-        class="mr-4 text-4xl"
+        class="mr-4 text-5xl"
       >
         <div :class="item.icon" />
       </div>
       <div class="flex-1">
-        <h3 class="text-sm font-medium">{{ item.name }}</h3>
-        <p class="text-sm font-normal op-50">{{ item.description }}</p>
+        <h3 class="text-md pb-1 font-medium">{{ item.name }}</h3>
+        <p class="min-h-3em text-sm font-normal lh-1.5em op-50">{{ item.description }}</p>
       </div>
     </div>
   </a>

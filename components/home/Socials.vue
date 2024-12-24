@@ -9,13 +9,19 @@ const socialList = shallowRef<ISocial[]>([
     class: 'hover:bg-gray-700 dark:hover:bg-white dark:hover:text-gray-900',
   },
   {
-    text: '',
+    label: 'Twitter',
     link: 'https://twitter.com/ntnyq',
     icon: 'i-fa-brands:twitter',
     class: 'hover:bg-[#00ACEE]',
   },
   {
-    text: '',
+    label: 'Bluesky',
+    link: 'https://bsky.app/profile/ntnyq.bsky.social',
+    icon: 'i-ri:bluesky-fill',
+    class: 'hover:bg-[#0057a8]',
+  },
+  {
+    label: 'Bilibili',
     link: 'https://space.bilibili.com/40199161',
     icon: 'i-ri:bilibili-fill',
     class: 'hover:bg-[#fb7299]',

@@ -52,11 +52,6 @@
     "vue-tsc": "^2.2.0",
     "workbox-build": "^7.3.0"
   },
-  "pnpm": {
-    "overrides": {
-      "typescript": "5.7.2"
-    }
-  },
   "nano-staged": {
     "*.{js,ts,mjs,cjs,vue,html,json,md,yml,yaml}": "eslint --fix"
   }

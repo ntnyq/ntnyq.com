@@ -2,4 +2,6 @@
 
 My personal website.
 
-## Design and Code
+## License
+
+[MIT](./LICENSE) License © 2024-PRESENT [ntnyq](https://github.com/ntnyq)

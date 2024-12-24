@@ -10,7 +10,7 @@ defineProps<{
   <a
     :class="item.class"
     :href="item.link"
-    :aria-label="item.text"
+    :aria-label="item.label || item.text"
     class="mr-2 mt-2 inline-flex items-center rounded-md bg-gray-50 px-3 py-2 decoration-none transition-colors dark:bg-gray-50/10 hover:text-white"
     target="_blank"
     rel="noopener noreferrer"
