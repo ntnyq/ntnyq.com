@@ -39,6 +39,12 @@ export default defineNuxtConfig({
     dirs: ['./components/home'],
   },
 
+  nitro: {
+    prerender: {
+      routes: ['/'],
+    },
+  },
+
   // Disable SSR when building
   ssr: false,
 
@@ -90,6 +96,7 @@ export default defineNuxtConfig({
     base: '/',
     injectRegister: 'auto',
     registerType: 'autoUpdate',
+    registerWebManifestInRouteRules: true,
     scope: '/',
     manifest: {
       background_color: '#ffffff',
