@@ -6,7 +6,7 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2024-12-23',
+  compatibilityDate: '2025-01-01',
 
   css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
@@ -72,6 +72,7 @@ export default defineNuxtConfig({
 
   experimental: {
     // should be disabled when `ssr: false`
+    appManifest: true,
     payloadExtraction: false,
   },
 

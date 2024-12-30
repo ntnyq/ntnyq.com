@@ -28,6 +28,18 @@ const eslintPackages: IProject[] = [
     description: 'Optimize SVG files with SVGO using ESLint',
     icon: 'i-vscode-icons:file-type-eslint',
   },
+  {
+    name: 'eslint-plugin-svg',
+    url: 'https://github.com/ntnyq/eslint-plugin-svg',
+    description: 'Rules for consistent, readable and valid SVG files',
+    icon: 'i-vscode-icons:file-type-eslint',
+  },
+  {
+    name: 'svg-eslint-parser',
+    url: 'https://github.com/ntnyq/svg-eslint-parser',
+    description: 'An SVG parser that produces output compatible with ESLint',
+    icon: 'i-vscode-icons:file-type-eslint',
+  },
 ]
 const typedefPackages: IProject[] = [
   {

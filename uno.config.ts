@@ -13,8 +13,6 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  safelist: [],
-
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
   presets: [
@@ -34,5 +32,17 @@ export default defineConfig({
 
   shortcuts: {
     'flex-center': 'flex items-center justify-center',
+  },
+
+  theme: {
+    colors: {
+      primary: '#1F9CF0',
+      'primary-darker': '',
+      'primary-lighter': '',
+    },
+
+    fontFamily: {
+      mono: 'var(--vp-font-family-mono)',
+    },
   },
 })
