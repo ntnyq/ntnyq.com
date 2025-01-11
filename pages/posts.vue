@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-[76ch] w-full px-4 py-10">
+  <div class="mx-auto max-w-76ch w-full px-4 py-10">
     <ContentList
       v-slot="{ list }"
       path="/posts"

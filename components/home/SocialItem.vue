@@ -1,19 +1,23 @@
 <script lang="ts" setup>
+import { NuxtLink } from '#components'
 import type { ISocial } from '~/types'
 
-defineProps<{
+const props = defineProps<{
   item: ISocial
 }>()
+
+const isExternal = computed(() => props.item.link && /^https?:/.test(props.item.link))
 </script>
 
 <template>
-  <a
+  <component
+    :is="isExternal ? 'a' : NuxtLink"
     :class="item.class"
     :href="item.link"
     :aria-label="item.label || item.text"
+    :target="isExternal ? '_blank' : undefined"
+    :rel="isExternal ? `noopener noreferrer` : undefined"
     class="mr-2 mt-2 inline-flex items-center rounded-md bg-gray-50 px-3 py-2 decoration-none transition-colors dark:bg-gray-50/10 hover:text-white"
-    target="_blank"
-    rel="noopener noreferrer"
   >
     <div
       v-if="item.icon"
@@ -27,5 +31,5 @@ defineProps<{
     >
       {{ item.text }}
     </div>
-  </a>
+  </component>
 </template>

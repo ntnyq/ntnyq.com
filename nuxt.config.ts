@@ -6,7 +6,7 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-01-01',
+  compatibilityDate: '2025-01-10',
 
   css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
