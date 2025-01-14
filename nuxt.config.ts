@@ -91,6 +91,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vite-pwa/nuxt',
     '@nuxt/image',
+    '@nuxt-dev/medium-zoom',
   ],
 
   pwa: {
