@@ -52,10 +52,14 @@ export default defineNuxtConfig({
    * @see {@link https://content.nuxt.com/get-started/configuration}
    */
   content: {
-    highlight: {
-      theme: {
-        dark: 'vitesse-dark',
-        default: 'vitesse-light',
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            dark: 'vitesse-dark',
+            default: 'vitesse-light',
+          },
+        },
       },
     },
   },

@@ -16,7 +16,7 @@ const socialList = shallowRef<ISocial[]>([
   },
   {
     label: 'Bluesky',
-    link: 'https://bsky.app/profile/ntnyq.bsky.social',
+    link: 'https://bsky.app/profile/ntnyq.com',
     icon: 'i-ri:bluesky-fill',
     class: 'hover:bg-#0057a8',
   },

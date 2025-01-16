@@ -2,11 +2,22 @@
 definePageMeta({
   layout: 'post',
 })
+
+const route = useRoute()
+
+const { data: page } = await useAsyncData(
+  route.path,
+  async () => await queryCollection('content').path(route.path).first(),
+)
 </script>
 
 <template>
   <div>
-    <ContentDoc />
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+      prose
+    />
     <p class="py-4">
       <NuxtLink
         to="/posts"
