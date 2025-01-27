@@ -40,7 +40,7 @@
     "@nuxt/eslint": "^0.7.5",
     "@types/prompts": "^2.4.9",
     "@unocss/reset": "^65.4.3",
-    "bumpp": "^9.11.1",
+    "bumpp": "^10.0.1",
     "consola": "^3.4.0",
     "eslint": "^9.19.0",
     "husky": "^9.1.7",
