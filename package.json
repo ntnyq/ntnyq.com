@@ -37,7 +37,7 @@
     "@ntnyq/eslint-config": "^3.12.3",
     "@ntnyq/prettier-config": "^1.22.1",
     "@nuxt-dev/medium-zoom": "^0.0.2",
-    "@nuxt/eslint": "^0.7.6",
+    "@nuxt/eslint": "^1.0.0",
     "@types/prompts": "^2.4.9",
     "@unocss/reset": "^65.4.3",
     "bumpp": "^10.0.1",
