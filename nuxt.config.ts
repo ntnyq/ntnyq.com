@@ -6,7 +6,7 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-01-10',
+  compatibilityDate: '2025-02-06',
 
   css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
 
@@ -40,8 +40,25 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    prerender: {
-      routes: ['/'],
+    preset: 'static',
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+    routeRules: {
+      '/': {
+        prerender: true,
+      },
+      '/*': {
+        prerender: false,
+      },
+      '/200.html': {
+        prerender: true,
+      },
+      '/404.html': {
+        prerender: true,
+      },
     },
   },
 
@@ -65,7 +82,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true,
+    enabled: false,
   },
 
   eslint: {
@@ -75,9 +92,11 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    // should be disabled when `ssr: false`
-    appManifest: true,
+    appManifest: false,
+    clientNodeCompat: true,
     payloadExtraction: false,
+    renderJsonPayloads: true,
+    typedPages: true,
   },
 
   future: {
