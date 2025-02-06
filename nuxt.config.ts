@@ -115,6 +115,10 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt/image',
     '@nuxt-dev/medium-zoom',
+    /**
+     * @see {@link https://motion.unovue.com/getting-started/introduction}
+     */
+    'motion-v/nuxt',
   ],
 
   pwa: {

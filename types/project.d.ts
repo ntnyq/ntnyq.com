@@ -4,3 +4,8 @@ export interface IProject {
   url: string
   icon?: string
 }
+
+export interface IProjectGroup {
+  projects: IProject[]
+  title: string
+}
