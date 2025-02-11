@@ -113,7 +113,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/eslint',
     '@vite-pwa/nuxt',
-    '@nuxt/image',
     '@nuxt-dev/medium-zoom',
     /**
      * @see {@link https://motion.unovue.com/getting-started/introduction}
