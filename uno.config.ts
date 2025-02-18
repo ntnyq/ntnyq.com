@@ -4,7 +4,6 @@
 
 import {
   defineConfig,
-  presetAttributify,
   presetIcons,
   presetTypography,
   presetUno,
@@ -27,11 +26,12 @@ export default defineConfig({
       },
     }),
     presetTypography(),
-    presetAttributify(),
   ],
 
   shortcuts: {
     'flex-center': 'flex items-center justify-center',
+    'flex-col-center': 'flex-center flex-col',
+    'wh-full': 'w-full h-full',
   },
 
   theme: {

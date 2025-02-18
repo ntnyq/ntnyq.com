@@ -22,7 +22,9 @@ defineProps<{
       </div>
       <div class="flex-1">
         <h3 class="text-md pb-1 font-medium">{{ item.name }}</h3>
-        <p class="min-h-3em text-sm font-normal lh-1.5em op-50">{{ item.description }}</p>
+        <p class="min-h-3em text-sm font-normal lh-1.5em op-50">
+          {{ item.description }}
+        </p>
       </div>
     </div>
   </a>

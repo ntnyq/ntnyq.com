@@ -4,12 +4,10 @@
   "useGitignore": true,
   "allowCompoundWords": true,
   "words": [
-    "attributify",
     "bilibili",
     "bumpp",
     "changelogithub",
     "gstatic",
-    "Hubot",
     "iconify",
     "nuxt",
     "nuxtjs",

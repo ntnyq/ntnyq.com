@@ -6,7 +6,9 @@ const props = defineProps<{
   item: ISocial
 }>()
 
-const isExternal = computed(() => props.item.link && /^https?:/.test(props.item.link))
+const isExternal = computed(
+  () => props.item.link && /^https?:/.test(props.item.link),
+)
 </script>
 
 <template>

@@ -11,9 +11,8 @@ import { Analytics } from '@vercel/analytics/nuxt'
     </main>
 
     <template #fallback>
-      <div class="h-screen flex flex-center gap-1 text-3xl font-medium">
-        <div class="i-ri:loader-4-fill animate-spin" />
-        Loading...
+      <div class="relative h-screen">
+        <Loading />
       </div>
     </template>
   </Suspense>

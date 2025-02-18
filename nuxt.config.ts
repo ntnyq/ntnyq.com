@@ -8,7 +8,8 @@ import { META } from './composables/constants'
 export default defineNuxtConfig({
   compatibilityDate: '2025-02-06',
 
-  css: ['@unocss/reset/tailwind.css', '~/styles/vars.css', '~/styles/index.css'],
+  // Disable SSR when building
+  ssr: false,
 
   app: {
     head: {
@@ -36,34 +37,8 @@ export default defineNuxtConfig({
   },
 
   components: {
-    dirs: ['./components/home'],
+    dirs: ['./components/home', './components/ui'],
   },
-
-  nitro: {
-    preset: 'static',
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
-    routeRules: {
-      '/': {
-        prerender: true,
-      },
-      '/*': {
-        prerender: false,
-      },
-      '/200.html': {
-        prerender: true,
-      },
-      '/404.html': {
-        prerender: true,
-      },
-    },
-  },
-
-  // Disable SSR when building
-  ssr: false,
 
   /**
    * @see {@link https://content.nuxt.com/get-started/configuration}
@@ -80,6 +55,12 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  css: [
+    '@unocss/reset/tailwind.css',
+    '~/styles/vars.css',
+    '~/styles/index.css',
+  ],
 
   devtools: {
     enabled: false,
@@ -120,6 +101,29 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
   ],
 
+  nitro: {
+    preset: 'static',
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+    routeRules: {
+      '/': {
+        prerender: true,
+      },
+      '/*': {
+        prerender: false,
+      },
+      '/200.html': {
+        prerender: true,
+      },
+      '/404.html': {
+        prerender: true,
+      },
+    },
+  },
+
   pwa: {
     base: '/',
     injectRegister: 'auto',
@@ -154,10 +158,12 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}'],
       maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
       // https://github.com/vite-pwa/nuxt/issues/53
       navigateFallback: undefined,
+      globPatterns: [
+        '**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}',
+      ],
       runtimeCaching: [
         {
           handler: 'NetworkFirst',

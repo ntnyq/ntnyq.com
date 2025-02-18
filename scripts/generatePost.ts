@@ -58,7 +58,10 @@ export async function generatePost() {
     )
 
     await writeFile(
-      resolve('content/posts', `${result.draft ? '.' : ''}3.${result.title}.md`),
+      resolve(
+        'content/posts',
+        `${result.draft ? '.' : ''}3.${result.title}.md`,
+      ),
       generateMarkdown(result),
     )
 

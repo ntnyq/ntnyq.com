@@ -1,5 +1,8 @@
 # ntnyq.com
 
+[![CI](https://github.com/ntnyq/ntnyq.com/workflows/CI/badge.svg)](https://github.com/ntnyq/ntnyq.com/actions)
+[![LICENSE](https://img.shields.io/github/license/ntnyq/ntnyq.com.svg)](https://github.com/ntnyq/ntnyq.com/blob/main/LICENSE)
+
 My personal website.
 
 ## License
