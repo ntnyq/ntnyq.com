@@ -6,10 +6,7 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-02-06',
-
-  // Disable SSR when building
-  ssr: false,
+  compatibilityDate: '2025-02-21',
 
   app: {
     head: {
@@ -102,7 +99,7 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: 'static',
+    preset: 'vercel',
     esbuild: {
       options: {
         target: 'esnext',
