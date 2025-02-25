@@ -5,6 +5,10 @@
 
 My personal website.
 
+## Links
+
+- [Nuxt on Vercel](https://vercel.com/docs/frameworks/nuxt)
+
 ## License
 
 [MIT](./LICENSE) License © 2024-PRESENT [ntnyq](https://github.com/ntnyq)

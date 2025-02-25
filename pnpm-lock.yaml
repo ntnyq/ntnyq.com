@@ -83,8 +83,8 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       motion-v:
-        specifier: ^0.10.0
-        version: 0.10.0(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
+        specifier: ^0.11.0-beta.4
+        version: 0.11.0-beta.4(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
       nano-staged:
         specifier: ^0.8.0
         version: 0.8.0
@@ -4428,8 +4428,8 @@ packages:
   motion-utils@11.18.1:
     resolution: {integrity: sha512-49Kt+HKjtbJKLtgO/LKj9Ld+6vw9BjH5d9sc40R/kVyH8GLAXgT42M2NnuPcJNuA3s9ZfZBUcwIgpmZWGEE+hA==}
 
-  motion-v@0.10.0:
-    resolution: {integrity: sha512-ZTDI6h+Sc5vL4axDqYC32uOtS2yRFKbbN8Yrj4yhJUu0Nzonm2UA3ZibSYkfwz5kdbpiEfw0tugqPQCZUb8k+Q==}
+  motion-v@0.11.0-beta.4:
+    resolution: {integrity: sha512-FN/vh2XSzpBDpCM5oA8guX0G6gkikYbCr2gRBesMkrA4iEeHslwQiA6IFcPExFuSn1j2kgfB8vXaejZ8Xxn2NQ==}
     peerDependencies:
       vue: '>=3.0.0'
 
@@ -11800,7 +11800,7 @@ snapshots:
 
   motion-utils@11.18.1: {}
 
-  motion-v@0.10.0(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)):
+  motion-v@0.11.0-beta.4(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)):
     dependencies:
       '@vueuse/core': 12.7.0(typescript@5.7.3)
       framer-motion: 11.16.6

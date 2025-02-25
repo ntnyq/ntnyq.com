@@ -50,7 +50,7 @@
     "consola": "^3.4.0",
     "eslint": "^9.21.0",
     "husky": "^9.1.7",
-    "motion-v": "^0.10.0",
+    "motion-v": "^0.11.0-beta.4",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.2",
@@ -73,7 +73,7 @@
     }
   },
   "nano-staged": {
-    "*.{js,ts,mjs,cjs,vue,svg,json,md,yml,yaml}": "eslint --fix",
+    "*.{js,ts,mjs,cjs,vue,svg,md,yml,yaml,json}": "eslint --fix",
     "*.{css,scss,html}": "prettier -uw"
   }
 }

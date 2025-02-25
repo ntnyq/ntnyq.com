@@ -74,17 +74,6 @@ const projectGroups = readonly<IProjectGroup[]>([
     title: 'UnoCSS',
     projects: [
       {
-        name: 'weapp-json-schema',
-        url: 'https://github.com/ntnyq/weapp-json-schema',
-        description: 'Json schema definitions for weapp',
-        icon: 'i-vscode-icons:file-type-light-json-schema dark:i-vscode-icons:file-type-json-schema',
-      },
-    ],
-  },
-  {
-    title: 'Json Schema',
-    projects: [
-      {
         name: 'unocss-presets',
         url: 'https://github.com/ntnyq/unocss-presets',
         description: ' A collection of unocss presets',
@@ -95,6 +84,17 @@ const projectGroups = readonly<IProjectGroup[]>([
         url: 'https://github.com/ntnyq/iconify-collections',
         description: 'Some iconify collections.',
         icon: 'i-vscode-icons:file-type-unocss',
+      },
+    ],
+  },
+  {
+    title: 'Json Schema',
+    projects: [
+      {
+        name: 'weapp-json-schema',
+        url: 'https://github.com/ntnyq/weapp-json-schema',
+        description: 'Json schema definitions for weapp',
+        icon: 'i-vscode-icons:file-type-light-json-schema dark:i-vscode-icons:file-type-json-schema',
       },
     ],
   },
