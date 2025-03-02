@@ -6,7 +6,7 @@ import {
   defineConfig,
   presetIcons,
   presetTypography,
-  presetUno,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -15,7 +15,7 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
   presets: [
-    presetUno(),
+    presetWind3(),
     presetIcons({
       autoInstall: true,
       scale: 1.2,
@@ -36,7 +36,7 @@ export default defineConfig({
 
   theme: {
     colors: {
-      primary: '#1F9CF0',
+      primary: '#1f9cf0',
       'primary-darker': '',
       'primary-lighter': '',
     },

@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.6.1",
   "description": "ntnyq.com",
   "keywords": [],
   "author": {
@@ -17,7 +17,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "generate:post": "tsx scripts/generatePost.ts",
-    "lint": "eslint .",
+    "lint": "eslint",
     "postinstall": "nuxt prepare",
     "prepare": "husky",
     "preview": "nuxt preview",
@@ -26,10 +26,10 @@
   },
   "dependencies": {
     "@nuxt/content": "3.2.2",
-    "@unocss/nuxt": "^66.0.0",
+    "@unocss/nuxt": "^66.1.0-beta.3",
     "@vercel/analytics": "^1.5.0",
     "@vite-pwa/nuxt": "^0.10.6",
-    "@vueuse/nuxt": "^12.7.0",
+    "@vueuse/nuxt": "^12.8.2",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0",
     "nuxt": "^3.15.4"
@@ -40,40 +40,29 @@
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.16",
-    "@ntnyq/eslint-config": "^4.0.0-beta.8",
+    "@ntnyq/eslint-config": "^4.0.0-beta.11",
     "@ntnyq/prettier-config": "^2.0.0",
     "@nuxt-dev/medium-zoom": "^0.0.2",
     "@nuxt/eslint": "^1.1.0",
     "@types/prompts": "^2.4.9",
-    "@unocss/reset": "^66.0.0",
+    "@unocss/reset": "^66.1.0-beta.3",
     "bumpp": "^10.0.3",
     "consola": "^3.4.0",
     "eslint": "^9.21.0",
     "husky": "^9.1.7",
-    "motion-v": "^0.11.0-beta.6",
+    "motion-v": "^0.11.0",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.3",
     "prompts": "^2.4.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "unocss": "^66.0.0",
+    "unocss": "^66.1.0-beta.3",
     "vue-tsc": "^2.2.8",
     "workbox-build": "^7.3.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "better-sqlite3",
-      "esbuild"
-    ],
-    "overrides": {
-      "@vueuse/core": "^12.7.0",
-      "@vueuse/shared": "^12.7.0"
-    }
-  },
   "nano-staged": {
-    "*.{js,ts,mjs,cjs,vue,svg,md,yml,yaml,json}": "eslint --fix",
+    "*.{js,ts,mjs,cjs,vue,svg,md,yml,yaml,toml,json}": "eslint --fix",
     "*.{css,scss,html}": "prettier -uw"
   }
 }

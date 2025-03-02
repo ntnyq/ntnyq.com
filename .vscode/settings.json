@@ -21,5 +21,23 @@
     "typescript",
     "javascriptreact",
     "typescriptreact"
+  ],
+  "cSpell.useGitignore": true,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.words": [
+    "bilibili",
+    "bumpp",
+    "changelogithub",
+    "esbuild",
+    "gstatic",
+    "iconify",
+    "nuxt",
+    "nuxtjs",
+    "shiki",
+    "unocss",
+    "vercel",
+    "vitesse",
+    "vueuse",
+    "weapp"
   ]
 }
