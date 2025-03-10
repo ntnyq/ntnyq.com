@@ -25,14 +25,14 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@nuxt/content": "3.2.2",
+    "@nuxt/content": "3.3.0",
     "@unocss/nuxt": "^66.1.0-beta.3",
     "@vercel/analytics": "^1.5.0",
     "@vite-pwa/nuxt": "^0.10.6",
     "@vueuse/nuxt": "^12.8.2",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0",
-    "nuxt": "^3.15.4"
+    "nuxt": "^3.16.0"
   },
   "devDependencies": {
     "@iconify-json/fa-brands": "^1.2.1",
@@ -40,17 +40,17 @@
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.16",
-    "@ntnyq/eslint-config": "^4.0.0-beta.11",
+    "@ntnyq/eslint-config": "^4.0.0",
     "@ntnyq/prettier-config": "^2.0.0",
     "@nuxt-dev/medium-zoom": "^0.0.2",
-    "@nuxt/eslint": "^1.1.0",
+    "@nuxt/eslint": "^1.2.0",
     "@types/prompts": "^2.4.9",
     "@unocss/reset": "^66.1.0-beta.3",
     "bumpp": "^10.0.3",
     "consola": "^3.4.0",
-    "eslint": "^9.21.0",
+    "eslint": "^9.22.0",
     "husky": "^9.1.7",
-    "motion-v": "^0.11.0",
+    "motion-v": "^0.11.3",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.3",
