@@ -1,10 +1,10 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - better-sqlite3
-  - esbuild
+packages:
+  - .
 overrides:
   '@vueuse/core': ^12.8.2
   '@vueuse/shared': ^12.8.2
   esbuild: ^0.25.0
-packages:
-  - .
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - better-sqlite3
+  - esbuild
