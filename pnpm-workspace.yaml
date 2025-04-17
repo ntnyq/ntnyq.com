@@ -1,9 +1,9 @@
 packages:
   - .
 overrides:
-  '@vueuse/core': ^12.8.2
-  '@vueuse/shared': ^12.8.2
-  esbuild: ^0.25.0
+  '@vueuse/core': ^13.1.0
+  '@vueuse/shared': ^13.1.0
+  esbuild: ^0.25.2
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - better-sqlite3
