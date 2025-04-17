@@ -36,9 +36,9 @@ export default defineConfig({
 
   theme: {
     colors: {
-      primary: '#1f9cf0',
-      'primary-darker': '',
-      'primary-lighter': '',
+      primary: {
+        DEFAULT: '#1f9cf0',
+      },
     },
 
     fontFamily: {
