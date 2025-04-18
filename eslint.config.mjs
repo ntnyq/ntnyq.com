@@ -4,6 +4,7 @@ import { defineESLintConfig } from '@ntnyq/eslint-config'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 const configs = await defineESLintConfig({
+  pnpm: true,
   svgo: true,
 })
 
