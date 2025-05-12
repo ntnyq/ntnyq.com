@@ -6,7 +6,7 @@
 import { META } from './composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-04-21',
+  compatibilityDate: '2025-05-20',
 
   app: {
     head: {
