@@ -2,9 +2,9 @@ packages:
   - .
 
 overrides:
-  '@vueuse/core': ^13.2.0
-  '@vueuse/shared': ^13.2.0
-  esbuild: ^0.25.4
+  '@vueuse/core': ^13.4.0
+  '@vueuse/shared': ^13.4.0
+  esbuild: ^0.25.5
 
 onlyBuiltDependencies:
   - '@parcel/watcher'

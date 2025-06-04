@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Variant } from 'motion-v'
+import type { VariantType } from 'motion-v'
 import type { IProjectGroup } from '~/types'
 
 const projectGroups = readonly<IProjectGroup[]>([
@@ -100,7 +100,7 @@ const projectGroups = readonly<IProjectGroup[]>([
   },
 ])
 
-const projectList: Record<string, Variant> = {
+const projectList: Record<string, VariantType> = {
   hidden: {
     opacity: 0,
   },
@@ -108,7 +108,7 @@ const projectList: Record<string, Variant> = {
     opacity: 1,
   },
 }
-const projectItems: Record<string, Variant> = {
+const projectItems: Record<string, VariantType> = {
   hidden: {
     y: 30,
     opacity: 0,
