@@ -42,7 +42,7 @@
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.22",
     "@ntnyq/eslint-config": "^5.0.0-beta.5",
-    "@ntnyq/prettier-config": "^2.2.0",
+    "@ntnyq/prettier-config": "^3.0.1",
     "@nuxt-dev/medium-zoom": "^0.1.0",
     "@nuxt/eslint": "^1.4.1",
     "@types/prompts": "^2.4.9",
