@@ -61,7 +61,7 @@
     "typescript": "^5.8.3",
     "unocss": "^66.3.3",
     "vite": "npm:rolldown-vite@latest",
-    "vue-tsc": "^2.2.12",
+    "vue-tsc": "^3.0.1",
     "workbox-build": "^7.3.0"
   },
   "nano-staged": {
