@@ -148,7 +148,7 @@ const projectItems: Record<string, VariantType> = {
             :variants="projectItems"
             as-child
           >
-            <ProjectItem :item="item" />
+            <ProjectItem :item />
           </Motion>
         </Motion>
       </li>

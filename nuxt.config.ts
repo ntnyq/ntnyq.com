@@ -3,10 +3,10 @@
  * @see {@link https://nuxt.com/docs/api/configuration/nuxt-config}
  */
 
-import { META } from './composables/constants'
+import { META } from './app/composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-20',
+  compatibilityDate: '2025-08-20',
 
   app: {
     head: {
@@ -75,10 +75,6 @@ export default defineNuxtConfig({
     payloadExtraction: false,
     renderJsonPayloads: true,
     typedPages: true,
-  },
-
-  future: {
-    compatibilityVersion: 4,
   },
 
   imports: {

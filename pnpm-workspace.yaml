@@ -1,11 +1,8 @@
-packages:
-  - .
-
 overrides:
-  '@vueuse/core': ^13.4.0
-  '@vueuse/shared': ^13.4.0
-  esbuild: ^0.25.5
-
+  '@vueuse/core': ^13.9.0
+  '@vueuse/shared': ^13.9.0
+  esbuild: ^0.25.11
+  vite: 'npm:rolldown-vite@latest'
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - better-sqlite3

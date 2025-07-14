@@ -40,7 +40,7 @@ const socialList = shallowRef<ISocial[]>([
     <SocialItem
       v-for="item in socialList"
       :key="item.text"
-      :item="item"
+      :item
     />
   </div>
 </template>
