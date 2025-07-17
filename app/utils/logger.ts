@@ -3,7 +3,7 @@
  */
 
 import { consola } from 'consola/browser'
-import { name } from '../package.json'
+import { name } from '../../package.json'
 
 export const logger = consola.withTag(name)
 

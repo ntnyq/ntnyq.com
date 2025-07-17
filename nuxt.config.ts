@@ -3,7 +3,7 @@
  * @see {@link https://nuxt.com/docs/api/configuration/nuxt-config}
  */
 
-import { META } from './composables/constants'
+import { META } from './app/composables/constants'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-20',
