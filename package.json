@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "description": "ntnyq.com",
   "keywords": [],
   "author": {
@@ -27,14 +27,14 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.6.3",
-    "@unocss/nuxt": "^66.3.3",
+    "@unocss/nuxt": "^66.4.0",
     "@vercel/analytics": "^1.5.0",
     "@vite-pwa/nuxt": "^1.0.4",
-    "@vueuse/nuxt": "^13.5.0",
+    "@vueuse/nuxt": "^13.6.0",
     "better-sqlite3": "^12.2.0",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0",
-    "nuxt": "^4.0.1"
+    "nuxt": "^4.0.2"
   },
   "devDependencies": {
     "@iconify-json/fa-brands": "^1.2.1",
@@ -47,8 +47,8 @@
     "@nuxt-dev/medium-zoom": "^0.1.0",
     "@nuxt/eslint": "^1.7.1",
     "@types/prompts": "^2.4.9",
-    "@unocss/reset": "^66.3.3",
-    "bumpp": "^10.2.0",
+    "@unocss/reset": "^66.4.0",
+    "bumpp": "^10.2.2",
     "consola": "^3.4.2",
     "eslint": "^9.32.0",
     "husky": "^9.1.7",
@@ -58,10 +58,10 @@
     "prettier": "^3.6.2",
     "prompts": "^2.4.2",
     "tsx": "^4.20.3",
-    "typescript": "^5.8.3",
-    "unocss": "^66.3.3",
+    "typescript": "^5.9.2",
+    "unocss": "^66.4.0",
     "vite": "npm:rolldown-vite@latest",
-    "vue-tsc": "^3.0.4",
+    "vue-tsc": "^3.0.5",
     "workbox-build": "^7.3.0"
   },
   "nano-staged": {
