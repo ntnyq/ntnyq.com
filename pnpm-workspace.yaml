@@ -1,7 +1,7 @@
 overrides:
-  '@vueuse/core': ^13.5.0
-  '@vueuse/shared': ^13.5.0
-  esbuild: ^0.25.6
+  '@vueuse/core': ^13.7.0
+  '@vueuse/shared': ^13.7.0
+  esbuild: ^0.25.9
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
