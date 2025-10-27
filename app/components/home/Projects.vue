@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { stagger } from 'motion-v'
 import type { VariantType } from 'motion-v'
 import type { IProjectGroup } from '~/types'
 
@@ -124,7 +125,7 @@ const projectItems: Record<string, VariantType> = {
   <div class="mb-4 mt-10">
     <h2 class="mb-4 text-3xl font-bold">Projects</h2>
 
-    <ul class="w-full">
+    <ul class="w-full space-y-4">
       <li
         v-for="group in projectGroups"
         :key="group.title"
@@ -135,11 +136,10 @@ const projectItems: Record<string, VariantType> = {
           :variants="projectList"
           :transition="{
             type: 'spring',
-            delayChildren: 0.2,
-            staggerChildren: 0.2,
+            delayChildren: stagger(0.2),
           }"
           initial="hidden"
-          in-view="visible"
+          while-in-view="visible"
           class="grid grid-cols-1 gap-4 sm:grid-cols-2"
         >
           <Motion
