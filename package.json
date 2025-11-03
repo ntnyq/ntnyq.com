@@ -30,7 +30,7 @@
     "@unocss/nuxt": "^66.5.4",
     "@vercel/analytics": "^1.5.0",
     "@vite-pwa/nuxt": "^1.0.7",
-    "@vueuse/nuxt": "^13.9.0",
+    "@vueuse/nuxt": "^14.0.0",
     "better-sqlite3": "^12.4.1",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0",
