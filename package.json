@@ -26,9 +26,9 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@nuxt/content": "^3.8.2",
-    "@unocss/nuxt": "^66.5.9",
-    "@vercel/analytics": "^1.5.0",
+    "@nuxt/content": "^3.9.0",
+    "@unocss/nuxt": "^66.5.10",
+    "@vercel/analytics": "^1.6.1",
     "@vite-pwa/nuxt": "^1.1.0",
     "@vueuse/nuxt": "^14.1.0",
     "better-sqlite3": "^12.5.0",
@@ -47,7 +47,7 @@
     "@nuxt-dev/medium-zoom": "^0.1.0",
     "@nuxt/eslint": "^1.11.0",
     "@types/prompts": "^2.4.9",
-    "@unocss/reset": "^66.5.9",
+    "@unocss/reset": "^66.5.10",
     "bumpp": "^10.3.2",
     "consola": "^3.4.2",
     "eslint": "^9.39.1",
@@ -55,13 +55,13 @@
     "motion-v": "^1.7.4",
     "nano-staged": "^0.9.0",
     "npm-run-all2": "^8.0.4",
-    "prettier": "^3.7.3",
+    "prettier": "^3.7.4",
     "prompts": "^2.4.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "unocss": "^66.5.9",
+    "unocss": "^66.5.10",
     "vite": "npm:rolldown-vite@latest",
-    "vue-tsc": "^3.1.5",
+    "vue-tsc": "^3.1.7",
     "workbox-build": "^7.4.0"
   },
   "nano-staged": {
