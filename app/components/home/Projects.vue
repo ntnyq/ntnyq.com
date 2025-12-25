@@ -16,8 +16,7 @@ const projectGroups = readonly<IProjectGroup[]>([
       {
         name: 'Filter Now',
         url: 'https://github.com/ntnyq/filter-now',
-        description:
-          'An offline tool help user to add CSS based filter to image',
+        description: `An offline tool help user to add CSS based filter to image`,
         icon: 'i-vscode-icons:file-type-css',
       },
     ],
@@ -28,8 +27,7 @@ const projectGroups = readonly<IProjectGroup[]>([
       {
         name: 'eslint-plugin-github-action',
         url: 'https://github.com/ntnyq/eslint-plugin-github-action',
-        description:
-          'Rules for consistent, readable and valid GitHub action files',
+        description: `Rules for consistent, readable and valid GitHub action files`,
         icon: 'i-vscode-icons:file-type-eslint',
       },
       {
@@ -47,8 +45,13 @@ const projectGroups = readonly<IProjectGroup[]>([
       {
         name: 'svg-eslint-parser',
         url: 'https://github.com/ntnyq/svg-eslint-parser',
-        description:
-          'An SVG parser that produces output compatible with ESLint',
+        description: `An SVG parser that produces output compatible with ESLint`,
+        icon: 'i-vscode-icons:file-type-eslint',
+      },
+      {
+        name: 'eslint-plugin-oxfmt',
+        url: 'https://github.com/ntnyq/eslint-plugin-oxfmt',
+        description: 'An ESLint plugin for formatting code with oxfmt.',
         icon: 'i-vscode-icons:file-type-eslint',
       },
     ],
@@ -65,8 +68,7 @@ const projectGroups = readonly<IProjectGroup[]>([
       {
         name: 'vscode-extension-manifest',
         url: 'https://github.com/ntnyq/vscode-extension-manifest',
-        description:
-          'VSCode extension manifest type definitions, validators, and utilities',
+        description: `VSCode extension manifest type definitions, validators, and utilities`,
         icon: 'i-vscode-icons:file-type-vscode',
       },
     ],
