@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.10.0",
-    "@unocss/nuxt": "^66.5.10",
+    "@unocss/nuxt": "^66.5.11",
     "@vercel/analytics": "^1.6.1",
     "@vite-pwa/nuxt": "^1.1.0",
     "@vueuse/nuxt": "^14.1.0",
@@ -47,7 +47,7 @@
     "@nuxt-dev/medium-zoom": "^0.1.0",
     "@nuxt/eslint": "^1.12.1",
     "@types/prompts": "^2.4.9",
-    "@unocss/reset": "^66.5.10",
+    "@unocss/reset": "^66.5.11",
     "bumpp": "^10.3.2",
     "consola": "^3.4.2",
     "eslint": "^9.39.2",
@@ -59,7 +59,7 @@
     "prompts": "^2.4.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "unocss": "^66.5.10",
+    "unocss": "^66.5.11",
     "vite": "npm:rolldown-vite@latest",
     "vue-tsc": "^3.2.1",
     "workbox-build": "^7.4.0"
