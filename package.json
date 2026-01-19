@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.28.0",
   "description": "ntnyq.com",
   "keywords": [],
   "author": {
@@ -31,7 +31,7 @@
     "@vercel/analytics": "^1.6.1",
     "@vite-pwa/nuxt": "^1.1.0",
     "@vueuse/nuxt": "^14.1.0",
-    "better-sqlite3": "^12.5.0",
+    "better-sqlite3": "^12.6.0",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0",
     "nuxt": "npm:nuxt-nightly@latest"
@@ -41,7 +41,7 @@
     "@iconify-json/fluent-emoji-flat": "^1.2.5",
     "@iconify-json/radix-icons": "^1.2.6",
     "@iconify-json/ri": "^1.2.7",
-    "@iconify-json/vscode-icons": "^1.2.37",
+    "@iconify-json/vscode-icons": "^1.2.38",
     "@ntnyq/eslint-config": "^5.9.0",
     "@ntnyq/prettier-config": "^3.0.1",
     "@nuxt-dev/medium-zoom": "^0.1.0",
@@ -52,7 +52,7 @@
     "consola": "^3.4.2",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
-    "motion-v": "^1.7.5",
+    "motion-v": "^1.8.1",
     "nano-staged": "^0.9.0",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.7.4",
@@ -61,7 +61,7 @@
     "typescript": "^5.9.3",
     "unocss": "^66.5.12",
     "vite": "npm:rolldown-vite@latest",
-    "vue-tsc": "^3.2.1",
+    "vue-tsc": "^3.2.2",
     "workbox-build": "^7.4.0"
   },
   "nano-staged": {
