@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { stagger } from 'motion-v'
-import type { VariantType } from 'motion-v'
 import type { IProjectGroup } from '~/types'
 
 const projectGroups = readonly<IProjectGroup[]>([
@@ -102,25 +101,6 @@ const projectGroups = readonly<IProjectGroup[]>([
     ],
   },
 ])
-
-const projectList: Record<string, VariantType> = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-}
-const projectItems: Record<string, VariantType> = {
-  hidden: {
-    y: 30,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-}
 </script>
 
 <template>
@@ -135,7 +115,14 @@ const projectItems: Record<string, VariantType> = {
       >
         <h3 class="py-2 text-xl font-semibold op-75">{{ group.title }}</h3>
         <Motion
-          :variants="projectList"
+          :variants="{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+            },
+          }"
           :transition="{
             type: 'spring',
             delayChildren: stagger(0.2),
@@ -147,7 +134,16 @@ const projectItems: Record<string, VariantType> = {
           <Motion
             v-for="item in group.projects"
             :key="item.name"
-            :variants="projectItems"
+            :variants="{
+              hidden: {
+                y: 30,
+                opacity: 0,
+              },
+              visible: {
+                y: 0,
+                opacity: 1,
+              },
+            }"
             as-child
           >
             <ProjectItem :item />

@@ -13,7 +13,9 @@
       stiffness: 45,
       damping: 15,
     }"
-    :in-view-options="{ once: true }"
+    :in-view-options="{
+      once: true,
+    }"
     as="footer"
     class="mt-12 flex items-center justify-between"
   >
