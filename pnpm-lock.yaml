@@ -687,12 +687,12 @@ packages:
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
 
-  '@bomb.sh/tab@0.0.12':
-    resolution: {integrity: sha512-dYRwg4MqfHR5/BcTy285XOGRhjQFmNpaJBZ0tl2oU+RY595MQ5ApTF6j3OvauPAooHL6cfoOZMySQrOQztT8RQ==}
+  '@bomb.sh/tab@0.0.14':
+    resolution: {integrity: sha512-cHMk2LI430MVoX1unTt9oK1iZzQS4CYDz97MSxKLNErW69T43Z2QLFTpdS/3jVOIKrIADWfuxQ+nQNJkNV7E4w==}
     hasBin: true
     peerDependencies:
       cac: ^6.7.14
-      citty: ^0.1.6
+      citty: ^0.1.6 || ^0.2.0
       commander: ^13.1.0
     peerDependenciesMeta:
       cac:
@@ -1159,8 +1159,8 @@ packages:
   '@nuxt-dev/medium-zoom@0.1.0':
     resolution: {integrity: sha512-CQkOiRta8wR4auo10H70Dxl3fSUR4FDBvHJR7F/BQjfIHsXwp3q8ZFqjXayTvC6ehMOIKF9m6Tb0/6apvv62fw==}
 
-  '@nuxt/cli-nightly@3.34.0-20260310-103239-e2c9686':
-    resolution: {integrity: sha512-hkx+iXvWAn0xEl0Oe8DpfzMCs/gXxzgk/XvxkzzhrqoNGdkw1G3wQ3LVriCwEtbNHBiFUFSzENGfp5TMvYLF1A==}
+  '@nuxt/cli-nightly@3.35.0-20260310-233646-f71bc1e':
+    resolution: {integrity: sha512-r+AWBiiRIzIwh+p+bTYZ4t7rOgWCifcT/c4NB+XnubcbEwg7VunTliUZeVlwPkQeQ/mEUUcY0Y24lnL6GWjQhA==}
     engines: {node: ^16.14.0 || >=18.0.0}
     hasBin: true
     peerDependencies:
@@ -8089,7 +8089,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@bomb.sh/tab@0.0.12(cac@6.7.14)(citty@0.2.1)':
+  '@bomb.sh/tab@0.0.14(cac@6.7.14)(citty@0.2.1)':
     optionalDependencies:
       cac: 6.7.14
       citty: 0.2.1
@@ -8552,9 +8552,9 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt/cli-nightly@3.34.0-20260310-103239-e2c9686(@nuxt/schema-nightly@4.4.0-29552754.9240729e)(cac@6.7.14)(magicast@0.5.2)':
+  '@nuxt/cli-nightly@3.35.0-20260310-233646-f71bc1e(@nuxt/schema-nightly@4.4.0-29552754.9240729e)(cac@6.7.14)(magicast@0.5.2)':
     dependencies:
-      '@bomb.sh/tab': 0.0.12(cac@6.7.14)(citty@0.2.1)
+      '@bomb.sh/tab': 0.0.14(cac@6.7.14)(citty@0.2.1)
       '@clack/prompts': 1.1.0
       c12: 3.3.3(magicast@0.5.2)
       citty: 0.2.1
@@ -13489,7 +13489,7 @@ snapshots:
   nuxt-nightly@4.4.0-29552754.9240729e(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@25.4.0)(@vue/compiler-sfc@3.5.30)(better-sqlite3@12.6.2)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.6.2))(eslint@10.0.2(jiti@2.6.1))(ioredis@5.10.0)(lightningcss@1.31.1)(magicast@0.5.2)(nuxt-nightly@4.4.0-29552754.9240729e)(optionator@0.9.4)(rolldown@1.0.0-rc.5)(rollup-plugin-visualizer@6.0.11(rolldown@1.0.0-rc.5)(rollup@4.59.0))(rollup@4.59.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(vite@8.0.0-beta.15(@types/node@25.4.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2):
     dependencies:
       '@dxup/nuxt': 0.4.0(magicast@0.5.2)(typescript@5.9.3)
-      '@nuxt/cli': '@nuxt/cli-nightly@3.34.0-20260310-103239-e2c9686(@nuxt/schema-nightly@4.4.0-29552754.9240729e)(cac@6.7.14)(magicast@0.5.2)'
+      '@nuxt/cli': '@nuxt/cli-nightly@3.35.0-20260310-233646-f71bc1e(@nuxt/schema-nightly@4.4.0-29552754.9240729e)(cac@6.7.14)(magicast@0.5.2)'
       '@nuxt/devtools': 3.2.3(vite@8.0.0-beta.15(@types/node@25.4.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.30(typescript@5.9.3))
       '@nuxt/kit': '@nuxt/kit-nightly@4.4.0-29552754.9240729e(magicast@0.5.2)'
       '@nuxt/nitro-server': '@nuxt/nitro-server-nightly@4.4.0-29552754.9240729e(@babel/core@7.29.0)(better-sqlite3@12.6.2)(db0@0.3.4(better-sqlite3@12.6.2))(ioredis@5.10.0)(magicast@0.5.2)(nuxt-nightly@4.4.0-29552754.9240729e)(rolldown@1.0.0-rc.5)(typescript@5.9.3)'
