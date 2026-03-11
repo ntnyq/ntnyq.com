@@ -1,7 +1,7 @@
 overrides:
-  '@typescript-eslint/utils': ^8.56.1
+  '@typescript-eslint/utils': ^8.57.0
   esbuild: ^0.27.3
-  typescript-eslint: ^8.56.1
+  typescript-eslint: ^8.57.0
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - better-sqlite3

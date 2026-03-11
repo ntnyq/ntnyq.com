@@ -6,7 +6,7 @@
 import { META } from './app/composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2026-01-20',
+  compatibilityDate: '2026-03-10',
 
   app: {
     head: {
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
   experimental: {
     appManifest: false,
     clientNodeCompat: true,
-    payloadExtraction: false,
+    payloadExtraction: 'client',
     renderJsonPayloads: true,
     typedPages: true,
   },
@@ -88,6 +88,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vite-pwa/nuxt',
     '@nuxt-dev/medium-zoom',
+    '@vercel/analytics',
     /**
      * @see {@link https://motion.unovue.com/getting-started/introduction}
      */
@@ -100,6 +101,9 @@ export default defineNuxtConfig({
       options: {
         target: 'esnext',
       },
+    },
+    prerender: {
+      ignore: ['/__nuxt_content/content/sql_dump.txt'],
     },
     routeRules: {
       '/': {

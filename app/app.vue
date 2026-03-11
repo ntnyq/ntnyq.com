@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import { Analytics } from '@vercel/analytics/nuxt'
+defineProps<{}>()
 </script>
 
 <template>
   <Suspense>
     <main class="flex flex-col lg:h-screen">
       <NuxtLayout />
-      <Analytics />
       <NuxtPwaManifest />
     </main>
 
