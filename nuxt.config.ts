@@ -3,6 +3,7 @@
  * @see {@link https://nuxt.com/docs/api/configuration/nuxt-config}
  */
 
+import process from 'node:process'
 import { META } from './app/composables/constants'
 
 export default defineNuxtConfig({
@@ -31,6 +32,10 @@ export default defineNuxtConfig({
         { content: META.appDescription, property: 'og:description' },
       ],
     },
+  },
+
+  appConfig: {
+    commitSha: process.env.VERCEL_GIT_COMMIT_SHA,
   },
 
   components: {

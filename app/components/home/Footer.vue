@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const { commitSha } = useAppConfig()
+</script>
+
 <template>
   <Motion
     :initial="{
@@ -19,7 +23,9 @@
     as="footer"
     class="mt-12 flex items-center justify-between"
   >
-    <p class="text-sm op-40">ntnyq &copy; 2024-PRESENT</p>
+    <p class="text-sm op-40">
+      ntnyq &copy; 2024-PRESENT{{ commitSha ? ` - ${commitSha}` : '' }}
+    </p>
     <div
       @click="toggleDark"
       class="cursor-pointer rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700"
