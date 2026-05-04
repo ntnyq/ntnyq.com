@@ -4,5 +4,10 @@ declare module 'nuxt/schema' {
      * Vercel commit sha
      */
     commitSha?: string
+
+    /**
+     * Repository url
+     */
+    repositoryUrl?: string
   }
 }

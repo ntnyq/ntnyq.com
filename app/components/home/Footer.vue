@@ -1,5 +1,14 @@
 <script lang="ts" setup>
-const { commitSha } = useAppConfig()
+const { commitSha, repositoryUrl } = useAppConfig()
+
+const shortCommitSha = computed(() => commitSha?.slice(0, 7))
+const commitUrl = computed(() => {
+  if (!commitSha || !repositoryUrl) {
+    return null
+  }
+
+  return `${repositoryUrl}/commit/${commitSha}`
+})
 </script>
 
 <template>
@@ -23,12 +32,31 @@ const { commitSha } = useAppConfig()
     as="footer"
     class="mt-12 flex items-center justify-between"
   >
-    <p class="text-sm op-40">
-      ntnyq &copy; 2024-PRESENT{{ commitSha ? ` - ${commitSha}` : '' }}
+    <p class="text-sm op-50">
+      ntnyq &copy; 2024-PRESENT
+      <template v-if="shortCommitSha">
+        -
+        <NuxtLink
+          v-if="commitUrl"
+          :to="commitUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-mono op-80 transition-opacity hover:op-100"
+        >
+          {{ shortCommitSha }}
+        </NuxtLink>
+        <span
+          v-else
+          class="text-xs font-mono"
+        >
+          {{ shortCommitSha }}
+        </span>
+      </template>
     </p>
+
     <div
       @click="toggleDark"
-      class="cursor-pointer rounded-md p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700"
+      class="cursor-pointer rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-700"
     >
       <div class="i-radix-icons:sun dark:i-radix-icons:moon" />
     </div>

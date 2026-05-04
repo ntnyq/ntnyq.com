@@ -36,6 +36,7 @@ export default defineNuxtConfig({
 
   appConfig: {
     commitSha: process.env.VERCEL_GIT_COMMIT_SHA,
+    repositoryUrl: 'https://github.com/ntnyq/ntnyq.com',
   },
 
   components: {
