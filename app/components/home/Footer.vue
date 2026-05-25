@@ -30,9 +30,9 @@ const commitUrl = computed(() => {
       once: true,
     }"
     as="footer"
-    class="mt-12 flex items-center justify-between"
+    class="mt-12"
   >
-    <p class="text-sm op-50">
+    <p class="muted-copy text-sm">
       ntnyq &copy; 2024-PRESENT
       <template v-if="shortCommitSha">
         -
@@ -41,7 +41,7 @@ const commitUrl = computed(() => {
           :to="commitUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs font-mono op-80 transition-opacity hover:op-100"
+          class="text-xs font-mono op-85 transition-opacity hover:op-100"
         >
           {{ shortCommitSha }}
         </NuxtLink>
@@ -53,12 +53,5 @@ const commitUrl = computed(() => {
         </span>
       </template>
     </p>
-
-    <div
-      @click="toggleDark"
-      class="cursor-pointer rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-700"
-    >
-      <div class="i-radix-icons:sun dark:i-radix-icons:moon" />
-    </div>
   </Motion>
 </template>

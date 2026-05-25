@@ -11,52 +11,103 @@ const posts = computed(() => {
     .filter(post => post.path?.startsWith('/posts/'))
     .sort((a, b) => b.path.localeCompare(a.path, undefined, { numeric: true }))
 })
+
+function updateCardGlow(event: MouseEvent) {
+  const card = event.currentTarget as HTMLElement | null
+  if (!card) {
+    return
+  }
+
+  const rect = card.getBoundingClientRect()
+  const x = event.clientX - rect.left
+  const y = event.clientY - rect.top
+
+  card.style.setProperty('--mx', `${x}px`)
+  card.style.setProperty('--my', `${y}px`)
+}
+
+function resetCardGlow(event: MouseEvent) {
+  const card = event.currentTarget as HTMLElement | null
+  if (!card) {
+    return
+  }
+
+  card.style.removeProperty('--mx')
+  card.style.removeProperty('--my')
+}
 </script>
 
 <template>
-  <section class="mx-auto max-w-76ch w-full px-4 py-10">
-    <header class="mb-8 border-b border-zinc-200 pb-6 dark:border-zinc-800">
-      <p class="mb-2 text-sm text-zinc-500 tracking-wide uppercase">Writing</p>
-      <h1
-        class="text-3xl text-zinc-900 font-semibold lg:text-4xl dark:text-zinc-100"
-      >
-        Posts
-      </h1>
-      <p class="mt-3 text-zinc-600 leading-relaxed dark:text-zinc-400">
+  <section class="site-shell w-full">
+    <Motion
+      :initial="{ opacity: 0, y: 16 }"
+      :animate="{ opacity: 1, y: 0 }"
+      :transition="{ type: 'spring', stiffness: 180, damping: 20 }"
+      as="header"
+      class="mb-8 border-b border-$c-border pb-6"
+    >
+      <p class="section-kicker">Writing</p>
+      <h1 class="section-title text-3xl font-semibold lg:text-4xl">Posts</h1>
+      <p class="muted-copy mt-3 leading-relaxed">
         Notes, ideas, and practical experiments.
       </p>
-    </header>
+    </Motion>
 
     <div class="grid gap-4">
-      <NuxtLink
+      <Motion
         v-for="post in posts"
         :key="post.id"
-        :to="post.path"
-        class="group border border-zinc-200 rounded-xl bg-white/85 p-5 transition-all duration-250 dark:border-zinc-800 hover:border-zinc-300 dark:bg-zinc-900/70 hover:shadow-sm hover:-translate-y-0.5 dark:hover:border-zinc-700"
+        :initial="{ opacity: 0, y: 16 }"
+        :while-in-view="{ opacity: 1, y: 0 }"
+        :in-view-options="{ once: true, amount: 0.2 }"
+        :transition="{ type: 'spring', stiffness: 210, damping: 21 }"
+        as-child
       >
-        <div class="mb-3 flex items-center justify-between gap-3">
-          <h2
-            class="line-clamp-1 text-xl text-zinc-900 font-medium transition-colors dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-300"
-          >
-            {{ post.title || post.stem }}
-          </h2>
-          <span
-            class="border border-zinc-200 rounded-full px-2.5 py-1 text-xs text-zinc-500 font-mono dark:border-zinc-700 dark:text-zinc-400"
-          >
-            {{ post.stem }}
-          </span>
-        </div>
-
-        <p
-          class="line-clamp-2 text-zinc-600 leading-relaxed dark:text-zinc-400"
+        <NuxtLink
+          @mousemove="updateCardGlow"
+          @mouseleave="resetCardGlow"
+          :to="post.path"
+          class="surface-card glow-track hover-lift group block p-5 focus-ring"
         >
-          {{ post.description || 'No description yet.' }}
-        </p>
-      </NuxtLink>
+          <div class="mb-3 flex items-center justify-between gap-3">
+            <Motion
+              :initial="{ opacity: 0, y: 6 }"
+              :while-in-view="{ opacity: 1, y: 0 }"
+              :in-view-options="{ once: true, amount: 0.2 }"
+              :transition="{ type: 'spring', stiffness: 245, damping: 22 }"
+              as="h2"
+              class="line-clamp-1 text-xl font-medium transition-colors group-hover:text-$c-accent"
+            >
+              {{ post.title || post.stem }}
+            </Motion>
+            <span
+              class="border border-$c-border rounded-full px-2.5 py-1 text-xs text-$c-muted font-mono"
+            >
+              {{ post.stem }}
+            </span>
+          </div>
+
+          <Motion
+            :initial="{ opacity: 0, y: 6 }"
+            :while-in-view="{ opacity: 1, y: 0 }"
+            :in-view-options="{ once: true, amount: 0.2 }"
+            :transition="{
+              type: 'spring',
+              stiffness: 230,
+              damping: 22,
+              delay: 0.08,
+            }"
+            as="p"
+            class="muted-copy line-clamp-2 leading-relaxed"
+          >
+            {{ post.description || 'No description yet.' }}
+          </Motion>
+        </NuxtLink>
+      </Motion>
 
       <p
         v-if="posts.length === 0"
-        class="border border-zinc-200 rounded-xl p-5 text-zinc-500 dark:border-zinc-800 dark:text-zinc-400"
+        class="surface-card p-5 text-$c-muted"
       >
         No posts yet.
       </p>

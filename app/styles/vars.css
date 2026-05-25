@@ -1,18 +1,36 @@
 :root {
   color-scheme: light;
-  --c-fg: #232323;
-  --c-bg: #fff;
-  --c-border: #eee;
-  --c-scrollbar: #d9d9d9;
-  --c-scrollbar-hover: #bbbbbb;
+  --font-display: "Sora", "Avenir Next Condensed", "Segoe UI", sans-serif;
+  --font-body: "Instrument Sans", "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --c-fg: #0f172a;
+  --c-muted: #5b6578;
+  --c-bg: #f4f7fc;
+  --c-surface: #ffffff;
+  --c-surface-soft: #f8fbff;
+  --c-border: #d9e2f0;
+  --c-accent: #2d5bff;
+  --c-accent-soft: #e6edff;
+  --c-shadow: rgba(26, 46, 90, 0.1);
+
+  --c-scrollbar: #c0ccde;
+  --c-scrollbar-hover: #9eacc2;
   --un-default-border-color: var(--c-border);
 }
 
 .dark {
   color-scheme: dark;
-  --c-fg: #fff;
-  --c-bg: #1e1e1e;
-  --c-border: #333;
-  --c-scrollbar: #333333;
-  --c-scrollbar-hover: #555555;
+  --c-fg: #e8ecf8;
+  --c-muted: #9da8be;
+  --c-bg: #0b1220;
+  --c-surface: #131d31;
+  --c-surface-soft: #0f182a;
+  --c-border: #24324b;
+  --c-accent: #7fa0ff;
+  --c-accent-soft: #1a2a4d;
+  --c-shadow: rgba(4, 8, 16, 0.5);
+
+  --c-scrollbar: #28354f;
+  --c-scrollbar-hover: #3b4c6f;
 }

@@ -19,7 +19,7 @@ const isExternal = computed(
     :aria-label="item.label || item.text"
     :target="isExternal ? '_blank' : undefined"
     :rel="isExternal ? `noopener noreferrer` : undefined"
-    class="mr-2 mt-2 inline-flex items-center rounded-md bg-gray-50 px-3 py-2 decoration-none transition-colors dark:bg-gray-50/10 hover:text-white"
+    class="surface-card hover-lift mr-2 mt-2 inline-flex items-center gap-1.5 px-3 py-2 decoration-none hover:text-white focus-ring"
   >
     <div
       v-if="item.icon"
@@ -29,7 +29,7 @@ const isExternal = computed(
     </div>
     <div
       v-if="item.text"
-      class="ml-1 text-sm"
+      class="text-sm font-medium"
     >
       {{ item.text }}
     </div>

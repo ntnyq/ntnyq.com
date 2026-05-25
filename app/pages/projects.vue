@@ -101,12 +101,26 @@ const projectGroups = readonly<IProjectGroup[]>([
     ],
   },
 ])
+
+useHead({
+  title: 'Projects - ntnyq',
+})
 </script>
 
 <template>
-  <section class="mb-4 mt-12">
-    <p class="section-kicker">Selected works</p>
-    <h2 class="section-title mb-4 text-3xl font-bold md:text-4xl">Projects</h2>
+  <div class="site-shell xl:text-lg">
+    <Motion
+      :initial="{ opacity: 0, y: 20 }"
+      :while-in-view="{ opacity: 1, y: 0 }"
+      :transition="{ type: 'spring', stiffness: 45, damping: 15 }"
+      :in-view-options="{ once: true }"
+      as="header"
+      class="mb-8 mt-4"
+    >
+      <p class="section-kicker">Directory</p>
+      <h1 class="section-title text-4xl font-bold">Projects</h1>
+      <p class="muted-copy mt-2">Open source things I've built and maintain.</p>
+    </Motion>
 
     <ul class="w-full space-y-4">
       <li
@@ -156,5 +170,5 @@ const projectGroups = readonly<IProjectGroup[]>([
         </Motion>
       </li>
     </ul>
-  </section>
+  </div>
 </template>

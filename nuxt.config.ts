@@ -7,7 +7,7 @@ import process from 'node:process'
 import { META } from './app/composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2026-03-10',
+  compatibilityDate: '2026-05-10',
 
   app: {
     head: {
@@ -95,6 +95,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxt-dev/medium-zoom',
     '@vercel/analytics',
+    '@nuxtjs/mdc',
     /**
      * @see {@link https://motion.unovue.com/getting-started/introduction}
      */
