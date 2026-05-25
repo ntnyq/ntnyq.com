@@ -31,7 +31,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vite-pwa/nuxt": "^1.1.1",
     "@vueuse/nuxt": "^14.3.0",
-    "better-sqlite3": "^12.9.0",
+    "better-sqlite3": "^12.10.0",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0"
   },
@@ -49,7 +49,7 @@
     "@unocss/reset": "^66.6.8",
     "bumpp": "^11.1.0",
     "consola": "^3.4.2",
-    "eslint": "^10.3.0",
+    "eslint": "^10.4.0",
     "h3": "^2.0.1-rc.22",
     "husky": "^9.1.7",
     "motion-v": "^2.2.1",
@@ -58,11 +58,11 @@
     "nuxt": "^4.4.5",
     "prettier": "^3.8.3",
     "prompts": "^2.4.2",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.1",
     "typescript": "^6.0.3",
     "unocss": "^66.6.8",
-    "vite": "^8.0.11",
-    "vue-tsc": "^3.2.8",
+    "vite": "^8.0.13",
+    "vue-tsc": "^3.2.9",
     "workbox-build": "^7.4.1"
   },
   "nano-staged": {
