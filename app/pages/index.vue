@@ -1,6 +1,6 @@
 <template>
-  <div class="site-shell xl:text-lg">
+  <div class="site-frame">
     <Hero />
-    <Socials />
+    <Projects />
   </div>
 </template>

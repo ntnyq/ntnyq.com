@@ -1,44 +1,76 @@
-<script lang="ts" setup>
+<script setup lang="ts">
+const workingSet = [
+  'TypeScript',
+  'Vue',
+  'Nuxt',
+  'ESLint',
+  'AST tooling',
+  'UnoCSS',
+] as const
+
 useHead({
-  title: 'About - ntnyq',
+  title: 'About — ntnyq',
 })
 </script>
 
 <template>
-  <div class="site-shell xl:text-lg">
-    <Motion
-      :initial="{ opacity: 0, y: 20 }"
-      :while-in-view="{ opacity: 1, y: 0 }"
-      :transition="{ type: 'spring', stiffness: 45, damping: 15 }"
-      :in-view-options="{ once: true }"
-      as="header"
-      class="mb-7 mt-4"
-    >
-      <p class="section-kicker">Profile</p>
-      <h1 class="section-title text-4xl font-bold">About</h1>
-    </Motion>
+  <div class="site-frame page-wrap">
+    <header class="page-header">
+      <h1 class="page-title">About</h1>
+    </header>
 
-    <Motion
-      :initial="{ opacity: 0, y: 20 }"
-      :while-in-view="{ opacity: 1, y: 0 }"
-      :transition="{ type: 'spring', stiffness: 45, damping: 15, delay: 0.1 }"
-      :in-view-options="{ once: true }"
-      as="div"
-      class="surface-card p-6 text-lg space-y-4"
-    >
+    <div class="prose">
       <p>
-        I'm ntnyq, a front-end developer focused on building tools and open
-        source projects that improve developer experience.
+        I'm ntnyq, a front-end developer who enjoys working on the systems
+        around an interface — not only what people see, but also the parsers,
+        rules, types, and conventions underneath it.
       </p>
       <p>
-        Most of my work sits at the boundary between code quality and team
-        velocity.
+        Most of my open-source work is about making everyday development a
+        little clearer and more dependable: developer tooling, static analysis,
+        typed configuration, SVG, and the small utilities that remove repeated
+        friction from a project.
       </p>
-      <p class="muted-copy">
-        I work primarily with TypeScript, Vue, and the broader JavaScript
-        ecosystem. Most of my projects revolve around linting, code quality, and
-        developer tooling.
-      </p>
-    </Motion>
+    </div>
+
+    <section class="working-set">
+      <h2>Tools I use</h2>
+      <ul>
+        <li
+          v-for="item in workingSet"
+          :key="item"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
+
+<style scoped>
+.working-set {
+  margin-top: 2.5rem;
+}
+
+.working-set h2 {
+  margin: 0;
+  color: var(--c-fg-deep);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.working-set ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.working-set li {
+  color: var(--c-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+</style>

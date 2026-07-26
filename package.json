@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.11.0",
+  "packageManager": "pnpm@11.17.0",
   "description": "ntnyq.com",
   "keywords": [],
   "author": {
@@ -15,7 +15,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "format": "prettier -uw .",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "generate": "nuxt generate",
     "generate:post": "tsx scripts/generatePost.ts",
     "lint": "eslint",
@@ -26,12 +27,12 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@nuxt/content": "^3.15.0",
+    "@nuxt/content": "^3.15.2",
     "@unocss/nuxt": "^66.7.5",
     "@vercel/analytics": "^2.0.1",
     "@vite-pwa/nuxt": "^1.1.1",
     "@vueuse/nuxt": "^14.3.0",
-    "better-sqlite3": "^12.11.1",
+    "better-sqlite3": "^13.0.1",
     "floating-vue": "^5.2.2",
     "medium-zoom": "^1.1.0"
   },
@@ -41,32 +42,31 @@
     "@iconify-json/radix-icons": "^1.2.6",
     "@iconify-json/ri": "^1.2.10",
     "@iconify-json/vscode-icons": "^1.2.67",
-    "@ntnyq/eslint-config": "^6.1.5",
-    "@ntnyq/prettier-config": "^3.1.0",
+    "@ntnyq/eslint-config": "^7.0.0-beta.13",
     "@nuxt-dev/medium-zoom": "^0.1.0",
     "@nuxt/eslint": "^1.16.0",
     "@types/prompts": "^2.4.9",
     "@unocss/reset": "^66.7.5",
-    "bumpp": "^11.1.0",
+    "bumpp": "^12.0.0",
     "consola": "^3.4.2",
-    "eslint": "^10.7.0",
-    "h3": "^2.0.1-rc.25",
+    "eslint": "^10.8.0",
+    "h3": "^2.0.1-rc.26",
     "husky": "^9.1.7",
     "motion-v": "^2.3.0",
     "nano-staged": "^1.0.2",
     "npm-run-all2": "^9.0.2",
-    "nuxt": "^4.4.8",
-    "prettier": "^3.9.5",
+    "nuxt": "^4.5.0",
+    "oxfmt": "^0.60.0",
     "prompts": "^2.4.2",
     "tsx": "^4.23.1",
     "typescript": "^6.0.3",
     "unocss": "^66.7.5",
-    "vite": "^8.1.4",
-    "vue-tsc": "^3.3.7",
+    "vite": "^8.1.5",
+    "vue-tsc": "^3.3.8",
     "workbox-build": "^7.4.1"
   },
   "nano-staged": {
     "*.{js,ts,mjs,tsx,vue,svg,md,yml,yaml,toml,json}": "eslint --fix",
-    "*.{css,scss,html}": "prettier -uw"
+    "*.{css,scss,html}": "oxfmt --no-error-on-unmatched-pattern"
   }
 }

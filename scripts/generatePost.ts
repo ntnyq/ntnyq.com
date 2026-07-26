@@ -66,8 +66,8 @@ export async function generatePost() {
     )
 
     consola.success(`Post ${colors.green(result.title)} created successfully`)
-  } catch (err: unknown) {
-    console.log((err as Error).message)
+  } catch (error: unknown) {
+    console.log((error as Error).message)
   }
 }
 

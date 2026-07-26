@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const { commitSha, repositoryUrl } = useAppConfig()
 
 const shortCommitSha = computed(() => commitSha?.slice(0, 7))
@@ -12,46 +12,63 @@ const commitUrl = computed(() => {
 </script>
 
 <template>
-  <Motion
-    :initial="{
-      opacity: 0,
-      y: 20,
-    }"
-    :while-in-view="{
-      opacity: 1,
-      y: 0,
-    }"
-    :transition="{
-      type: 'spring',
-      stiffness: 45,
-      damping: 15,
-    }"
-    :in-view-options="{
-      once: true,
-    }"
-    as="footer"
-    class="mt-12"
-  >
-    <p class="muted-copy text-sm">
-      ntnyq &copy; 2024-PRESENT
-      <template v-if="shortCommitSha">
-        -
+  <footer class="site-footer">
+    <div class="site-frame footer-inner">
+      <p>CC BY-NC-SA 4.0 2024—PRESENT © ntnyq</p>
+      <div>
         <NuxtLink
-          v-if="commitUrl"
+          to="/sponsor"
+          class="soft-link"
+        >
+          Sponsor
+        </NuxtLink>
+        <NuxtLink
+          v-if="commitUrl && shortCommitSha"
           :to="commitUrl"
+          class="soft-link"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs font-mono op-85 transition-opacity hover:op-100"
+          external
         >
           {{ shortCommitSha }}
         </NuxtLink>
-        <span
-          v-else
-          class="text-xs font-mono"
-        >
-          {{ shortCommitSha }}
-        </span>
-      </template>
-    </p>
-  </Motion>
+      </div>
+    </div>
+  </footer>
 </template>
+
+<style scoped>
+.site-footer {
+  margin-top: auto;
+  padding-block: 2rem 2.5rem;
+}
+
+.footer-inner,
+.footer-inner div {
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-inner div {
+  gap: 1rem;
+}
+
+.footer-inner p,
+.footer-inner a {
+  margin: 0;
+  color: var(--c-muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 520px) {
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+</style>

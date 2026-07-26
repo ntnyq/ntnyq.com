@@ -1,77 +1,153 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const route = useRoute()
 
 const navItems = [
   { label: 'Home', to: '/' },
+  { label: 'Posts', to: '/posts' },
   { label: 'Projects', to: '/projects' },
   { label: 'About', to: '/about' },
-]
+] as const
+
+const socialItems = [
+  {
+    icon: 'i-ri:github-fill',
+    label: 'GitHub',
+    url: 'https://github.com/ntnyq',
+  },
+  {
+    icon: 'i-ri:bluesky-fill',
+    label: 'Bluesky',
+    url: 'https://bsky.app/profile/ntnyq.com',
+  },
+  {
+    icon: 'i-ri:twitter-x-fill',
+    label: 'Twitter',
+    url: 'https://twitter.com/ntnyq',
+  },
+] as const
 
 function isActive(to: string) {
-  if (to === '/') {
-    return route.path === '/'
-  }
-  return route.path.startsWith(to)
+  return to === '/' ? route.path === '/' : route.path.startsWith(to)
 }
 </script>
 
 <template>
-  <Motion
-    :initial="{ opacity: 0, y: -16 }"
-    :animate="{ opacity: 1, y: 0 }"
-    :transition="{ type: 'spring', stiffness: 230, damping: 24 }"
-    as="nav"
-    class="sticky top-0 z-50 border-b border-$c-border bg-$c-bg/84 backdrop-blur-xl"
-  >
-    <div class="site-shell flex items-center justify-between py-3 md:py-4">
+  <header class="site-header">
+    <NuxtLink
+      to="/"
+      class="brand soft-link"
+      aria-label="ntnyq, home"
+    >
+      ntnyq
+    </NuxtLink>
+
+    <nav
+      class="nav-right"
+      aria-label="Primary navigation"
+    >
       <NuxtLink
-        to="/"
-        class="group relative rounded-sm text-3xl font-bold tracking-tight md:text-4xl focus-ring"
+        v-for="item in navItems"
+        :key="item.to"
+        :to="item.to"
+        :aria-current="isActive(item.to) ? 'page' : undefined"
+        class="nav-link soft-link"
       >
-        <span class="section-title transition-colors group-hover:text-$c-accent"
-          >ntnyq</span
-        >
-        <span
-          class="absolute left-0 h-0.5 w-0 bg-$c-accent transition-all duration-300 -bottom-0.5 group-hover:w-full"
-        />
+        {{ item.label }}
       </NuxtLink>
 
-      <div class="flex items-center gap-1">
-        <NuxtLink
-          v-for="item in navItems"
-          :key="item.to"
-          :to="item.to"
-          :class="
-            isActive(item.to)
-              ? 'border-$c-border bg-$c-surface text-$c-fg op-100'
-              : 'text-$c-muted op-92 hover:text-$c-fg'
-          "
-          class="relative border border-transparent rounded-xl px-3 py-2 text-sm font-bold tracking-wide transition-colors hover:bg-$c-surface md:px-4 md:text-base focus-ring dark:hover:bg-$c-surface-soft"
-        >
-          {{ item.label }}
-          <span
-            v-if="isActive(item.to)"
-            class="absolute bottom-0 left-1/2 h-0.5 w-5 rounded-full bg-$c-accent -translate-x-1/2"
-          />
-        </NuxtLink>
+      <a
+        v-for="item in socialItems"
+        :key="item.url"
+        :href="item.url"
+        :aria-label="item.label"
+        :title="item.label"
+        class="nav-icon soft-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span
+          :class="item.icon"
+          aria-hidden="true"
+        />
+      </a>
 
-        <div class="mx-1 h-4 w-px bg-$c-border md:mx-2" />
-
-        <Motion
-          @click="toggleDark"
-          :while-hover="{ rotate: 12, scale: 1.06 }"
-          :while-tap="{ scale: 0.94, rotate: -8 }"
-          as="button"
-          class="group relative inline-flex cursor-pointer items-center justify-center border border-$c-border rounded-full bg-$c-surface-soft p-2 text-$c-fg transition-colors hover:border-$c-accent md:p-2.5 focus-ring"
-          aria-label="Toggle dark mode"
-          type="button"
-          role="button"
-        >
-          <span class="inline-block text-lg">
-            <div class="i-radix-icons:sun dark:i-radix-icons:moon" />
-          </span>
-        </Motion>
-      </div>
-    </div>
-  </Motion>
+      <button
+        @click="toggleDark"
+        class="nav-icon soft-link"
+        aria-label="Toggle color theme"
+        title="Toggle color theme"
+        type="button"
+      >
+        <span
+          class="i-ri:sun-line dark:i-ri:moon-line"
+          aria-hidden="true"
+        />
+      </button>
+    </nav>
+  </header>
 </template>
+
+<style scoped>
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.6rem clamp(1.25rem, 5vw, 2.5rem);
+}
+
+.brand {
+  color: var(--c-fg-deep);
+  font-size: 1.05rem;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+}
+
+.nav-link[aria-current='page'] {
+  opacity: 1;
+}
+
+/* No focus ring in the navbar; show focus by going solid instead */
+.soft-link:focus-visible {
+  opacity: 1;
+}
+
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    padding-block: 1.25rem;
+  }
+
+  .nav-right {
+    gap: 0.9rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .nav-icon:not(:last-child) {
+    display: none;
+  }
+}
+</style>

@@ -3,8 +3,9 @@
  */
 
 export const META = Object.freeze({
-  appDescription: `ntnyq's website`,
   appImage: '',
   appName: 'ntnyq',
   appUrl: 'https://ntnyq.com',
+  appDescription:
+    'Front-end developer building TypeScript, Vue, and open-source developer tools.',
 })

@@ -1,42 +1,102 @@
 <template>
-  <Motion
-    :initial="{ opacity: 0, y: 18 }"
-    :animate="{ opacity: 1, y: 0 }"
-    :transition="{ type: 'spring', stiffness: 200, damping: 22 }"
-    as="header"
-    class="mb-8 mt-8 md:(mb-10 mt-14)"
-  >
-    <p class="section-kicker">Developer profile</p>
-    <h1 class="section-title text-5xl font-bold lh-[1.06] md:text-6xl">
-      <span class="block">Hello,</span>
-      <span
-        class="mt-2 block text-[color:color-mix(in_srgb,var(--c-accent)_78%,var(--c-fg))]"
+  <section class="hero prose">
+    <h1>Hi, I'm ntnyq</h1>
+    <p>
+      A front-end developer. I spend most of my time with
+      <strong>TypeScript</strong>, <strong>Vue</strong>, and the tooling around
+      them.
+    </p>
+    <p>
+      I maintain
+      <NuxtLink to="/projects">open-source projects</NuxtLink>
+      for linting, parsing, types, and browser extensions. This is where I keep
+      the things I build and the
+      <NuxtLink to="/posts">notes</NuxtLink>
+      I write along the way.
+    </p>
+    <p>
+      Currently learning TypeScript and Nuxt, while maintaining a small family
+      of developer tools.
+    </p>
+    <p class="find-me">
+      Find me on
+      <a
+        href="https://github.com/ntnyq"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        I'm ntnyq.
-      </span>
-    </h1>
-    <div class="mt-7 max-w-2xl text-lg space-y-2.5">
-      <p class="font-medium">Front-end developer.</p>
-      <p>
-        Current learning
-        <NuxtLink
-          to="https://www.typescriptlang.org"
-          target="_blank"
-          class="mx-1 rounded-sm px-1.5 py-0.5 underline-offset-4 transition-colors hover:bg-$c-accent-soft hover:text-$c-accent hover:underline"
-          external
-        >
-          TypeScript
-        </NuxtLink>
-        and
-        <NuxtLink
-          to="https://nuxt.com"
-          target="_blank"
-          class="mx-1 rounded-sm px-1.5 py-0.5 underline-offset-4 transition-colors hover:bg-$c-accent-soft hover:text-$c-accent hover:underline"
-          external
-        >
-          Nuxt
-        </NuxtLink>
-      </p>
-    </div>
-  </Motion>
+        <span
+          class="i-ri:github-fill"
+          aria-hidden="true"
+        />
+        GitHub
+      </a>
+      <a
+        href="https://bsky.app/profile/ntnyq.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span
+          class="i-ri:bluesky-fill"
+          aria-hidden="true"
+        />
+        Bluesky
+      </a>
+      <a
+        href="https://twitter.com/ntnyq"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span
+          class="i-ri:twitter-x-fill"
+          aria-hidden="true"
+        />
+        Twitter
+      </a>
+      <a
+        href="https://space.bilibili.com/40199161"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span
+          class="i-ri:bilibili-fill"
+          aria-hidden="true"
+        />
+        Bilibili
+      </a>
+    </p>
+    <p class="muted-copy">
+      If my work has helped you, consider
+      <NuxtLink to="/sponsor">sponsoring me</NuxtLink>
+      to keep it sustainable.
+    </p>
+  </section>
 </template>
+
+<style scoped>
+.hero {
+  padding-top: 2.5rem;
+}
+
+.hero h1 {
+  margin: 0 0 1.5rem;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 0 0 1.1rem;
+}
+
+.find-me {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.find-me a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+</style>

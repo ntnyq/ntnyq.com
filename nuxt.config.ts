@@ -7,7 +7,7 @@ import process from 'node:process'
 import { META } from './app/composables/constants'
 
 export default defineNuxtConfig({
-  compatibilityDate: '2026-05-10',
+  compatibilityDate: '2026-07-10',
 
   app: {
     head: {
@@ -17,6 +17,7 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       meta: [
+        { content: '#ffffff', name: 'theme-color' },
         { content: META.appName, name: 'keywords' },
         { content: META.appDescription, name: 'description' },
         { content: META.appName, name: 'twitter:title' },
@@ -83,6 +84,10 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
+  future: {
+    compatibilityVersion: 5,
+  },
+
   imports: {
     dirs: ['./composables', './composables/state', './utils'],
   },
@@ -142,7 +147,7 @@ export default defineNuxtConfig({
       orientation: 'landscape-primary',
       protocol_handlers: [],
       short_name: META.appName,
-      theme_color: '#000000',
+      theme_color: '#050505',
       icons: [
         {
           sizes: '196x196',

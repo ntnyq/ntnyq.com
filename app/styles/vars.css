@@ -1,36 +1,35 @@
 :root {
   color-scheme: light;
-  --font-display: "Sora", "Avenir Next Condensed", "Segoe UI", sans-serif;
-  --font-body: "Instrument Sans", "Avenir Next", "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-sans: "Inter", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
 
-  --c-fg: #0f172a;
-  --c-muted: #5b6578;
-  --c-bg: #f4f7fc;
-  --c-surface: #ffffff;
-  --c-surface-soft: #f8fbff;
-  --c-border: #d9e2f0;
-  --c-accent: #2d5bff;
-  --c-accent-soft: #e6edff;
-  --c-shadow: rgba(26, 46, 90, 0.1);
+  --c-bg: #ffffff;
+  --c-fg: #555560;
+  --c-fg-deep: #18181c;
+  --c-muted: #8a8a91;
+  --c-border: rgba(125, 125, 125, 0.3);
+  --c-border-soft: rgba(125, 125, 125, 0.15);
+  --c-hover-bg: rgba(125, 125, 125, 0.08);
+  --c-code-bg: rgba(125, 125, 125, 0.1);
+  --c-ghost-stroke: rgba(170, 170, 170, 0.32);
 
-  --c-scrollbar: #c0ccde;
-  --c-scrollbar-hover: #9eacc2;
-  --un-default-border-color: var(--c-border);
+  --c-scrollbar: #d6d6da;
+  --c-scrollbar-hover: #b3b3ba;
+  --un-default-border-color: var(--c-border-soft);
 }
 
 .dark {
   color-scheme: dark;
-  --c-fg: #e8ecf8;
-  --c-muted: #9da8be;
-  --c-bg: #0b1220;
-  --c-surface: #131d31;
-  --c-surface-soft: #0f182a;
-  --c-border: #24324b;
-  --c-accent: #7fa0ff;
-  --c-accent-soft: #1a2a4d;
-  --c-shadow: rgba(4, 8, 16, 0.5);
+  --c-bg: #050505;
+  --c-fg: #d6d6dc;
+  --c-fg-deep: #f5f5f7;
+  --c-muted: #9a9aa3;
+  --c-border: rgba(140, 140, 140, 0.4);
+  --c-border-soft: rgba(140, 140, 140, 0.18);
+  --c-hover-bg: rgba(140, 140, 140, 0.12);
+  --c-code-bg: rgba(140, 140, 140, 0.14);
+  --c-ghost-stroke: rgba(150, 150, 150, 0.28);
 
-  --c-scrollbar: #28354f;
-  --c-scrollbar-hover: #3b4c6f;
+  --c-scrollbar: #333338;
+  --c-scrollbar-hover: #4a4a52;
 }

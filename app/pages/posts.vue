@@ -1,116 +1,148 @@
-<script lang="ts" setup>
+<script setup lang="ts">
+interface PostEntry {
+  date: Date | null
+  path: string
+  title: string
+}
+
 const route = useRoute()
 
-const { data: list } = await useAsyncData(
-  route.path,
-  async () => await queryCollection('content').all(),
-)
-
-const posts = computed(() => {
-  return (list.value || [])
-    .filter(post => post.path?.startsWith('/posts/'))
-    .sort((a, b) => b.path.localeCompare(a.path, undefined, { numeric: true }))
+const { data: list } = await useAsyncData(route.path, async () => {
+  return await queryCollection('content').all()
 })
 
-function updateCardGlow(event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement | null
-  if (!card) {
-    return
+const posts = computed<PostEntry[]>(() => {
+  return (list.value || [])
+    .filter(post => post.path?.startsWith('/posts/'))
+    .map(post => {
+      const rawDate = (post.meta as Record<string, unknown> | undefined)?.date
+
+      return {
+        date: typeof rawDate === 'string' ? new Date(rawDate) : null,
+        path: post.path,
+        title: post.title || post.stem,
+      }
+    })
+    .sort((a, b) => {
+      if (a.date && b.date) {
+        return b.date.getTime() - a.date.getTime()
+      }
+
+      return b.path.localeCompare(a.path, undefined, { numeric: true })
+    })
+})
+
+const groups = computed(() => {
+  const map = new Map<string, PostEntry[]>()
+
+  for (const post of posts.value) {
+    const year = post.date ? String(post.date.getFullYear()) : ''
+    const items = map.get(year) || []
+
+    items.push(post)
+    map.set(year, items)
   }
 
-  const rect = card.getBoundingClientRect()
-  const x = event.clientX - rect.left
-  const y = event.clientY - rect.top
+  return [...map.entries()].map(([year, items]) => ({ items, year }))
+})
 
-  card.style.setProperty('--mx', `${x}px`)
-  card.style.setProperty('--my', `${y}px`)
-}
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  day: 'numeric',
+  month: 'short',
+})
 
-function resetCardGlow(event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement | null
-  if (!card) {
-    return
-  }
-
-  card.style.removeProperty('--mx')
-  card.style.removeProperty('--my')
-}
+useHead({
+  title: 'Posts — ntnyq',
+})
 </script>
 
 <template>
-  <section class="site-shell w-full">
-    <Motion
-      :initial="{ opacity: 0, y: 16 }"
-      :animate="{ opacity: 1, y: 0 }"
-      :transition="{ type: 'spring', stiffness: 180, damping: 20 }"
-      as="header"
-      class="mb-8 border-b border-$c-border pb-6"
-    >
-      <p class="section-kicker">Writing</p>
-      <h1 class="section-title text-3xl font-semibold lg:text-4xl">Posts</h1>
-      <p class="muted-copy mt-3 leading-relaxed">
-        Notes, ideas, and practical experiments.
-      </p>
-    </Motion>
+  <div class="site-frame page-wrap">
+    <header class="page-header">
+      <h1 class="page-title">Posts</h1>
+    </header>
 
-    <div class="grid gap-4">
-      <Motion
-        v-for="post in posts"
-        :key="post.id"
-        :initial="{ opacity: 0, y: 16 }"
-        :while-in-view="{ opacity: 1, y: 0 }"
-        :in-view-options="{ once: true, amount: 0.2 }"
-        :transition="{ type: 'spring', stiffness: 210, damping: 21 }"
-        as-child
+    <div v-if="posts.length">
+      <section
+        v-for="group in groups"
+        :key="group.year"
+        class="post-group"
       >
-        <NuxtLink
-          @mousemove="updateCardGlow"
-          @mouseleave="resetCardGlow"
-          :to="post.path"
-          class="surface-card glow-track hover-lift group block p-5 focus-ring"
+        <div
+          v-if="group.year"
+          class="ghost-block"
+          aria-hidden="true"
         >
-          <div class="mb-3 flex items-center justify-between gap-3">
-            <Motion
-              :initial="{ opacity: 0, y: 6 }"
-              :while-in-view="{ opacity: 1, y: 0 }"
-              :in-view-options="{ once: true, amount: 0.2 }"
-              :transition="{ type: 'spring', stiffness: 245, damping: 22 }"
-              as="h2"
-              class="line-clamp-1 text-xl font-medium transition-colors group-hover:text-$c-accent"
-            >
-              {{ post.title || post.stem }}
-            </Motion>
-            <span
-              class="border border-$c-border rounded-full px-2.5 py-1 text-xs text-$c-muted font-mono"
-            >
-              {{ post.stem }}
-            </span>
-          </div>
+          <span>{{ group.year }}</span>
+        </div>
 
-          <Motion
-            :initial="{ opacity: 0, y: 6 }"
-            :while-in-view="{ opacity: 1, y: 0 }"
-            :in-view-options="{ once: true, amount: 0.2 }"
-            :transition="{
-              type: 'spring',
-              stiffness: 230,
-              damping: 22,
-              delay: 0.08,
-            }"
-            as="p"
-            class="muted-copy line-clamp-2 leading-relaxed"
+        <ul class="post-list">
+          <li
+            v-for="post in group.items"
+            :key="post.path"
           >
-            {{ post.description || 'No description yet.' }}
-          </Motion>
-        </NuxtLink>
-      </Motion>
-
-      <p
-        v-if="posts.length === 0"
-        class="surface-card p-5 text-$c-muted"
-      >
-        No posts yet.
-      </p>
+            <NuxtLink
+              :to="post.path"
+              class="post-link focus-ring"
+            >
+              <span class="post-title">{{ post.title }}</span>
+              <time
+                v-if="post.date"
+                :datetime="post.date.toISOString()"
+                class="post-date"
+              >
+                {{ dateFormatter.format(post.date) }}
+              </time>
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
     </div>
-  </section>
+
+    <p
+      v-else
+      class="muted-copy"
+    >
+      Nothing here yet.
+    </p>
+  </div>
 </template>
+
+<style scoped>
+.post-group + .post-group {
+  margin-top: 2.5rem;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-block: 0.55rem;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.post-link:hover {
+  opacity: 1;
+}
+
+.post-title {
+  color: var(--c-fg-deep);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.post-date {
+  flex: none;
+  color: var(--c-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+</style>

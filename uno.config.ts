@@ -25,7 +25,32 @@ export default defineConfig({
         'min-width': '1.2em',
       },
     }),
-    presetTypography(),
+    presetTypography({
+      cssExtend: {
+        a: {
+          'border-bottom': '1px solid var(--c-border)',
+          color: 'inherit',
+          'font-weight': 'inherit',
+          'text-decoration': 'none',
+          transition: 'border-color 0.2s ease, color 0.2s ease',
+        },
+        'a:hover': {
+          'border-bottom-color': 'var(--c-fg)',
+          color: 'var(--c-fg-deep)',
+        },
+        blockquote: {
+          'border-left': '3px solid var(--c-border-soft)',
+          color: 'var(--c-muted)',
+          'font-style': 'italic',
+        },
+        'code::after': {
+          content: 'none',
+        },
+        'code::before': {
+          content: 'none',
+        },
+      },
+    }),
   ],
 
   shortcuts: {
@@ -42,7 +67,8 @@ export default defineConfig({
     },
 
     fontFamily: {
-      mono: 'var(--vp-font-family-mono)',
+      mono: 'var(--font-mono)',
+      sans: 'var(--font-sans)',
     },
   },
 })

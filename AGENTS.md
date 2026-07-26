@@ -1,71 +1,51 @@
-# AGENTS.md
+# Repository Guidelines
 
-Guidance for AI coding agents working in this repository.
+## Project Structure & Module Organization
 
-## Project Snapshot
+This repository is a Nuxt 4 personal site written in Vue 3 and TypeScript.
+Application code lives in `app/`: route components are in `app/pages/`, shared
+UI in `app/components/`, layouts in `app/layouts/`, and reusable logic in
+`app/composables/` and `app/utils/`. Global CSS and design tokens live under
+`app/styles/`; prefer UnoCSS utilities for component-level styling. Markdown
+posts belong in `content/posts/`, while static files are served from `public/`.
+Build helpers live in `scripts/`, and root configuration files define Nuxt,
+UnoCSS, content, TypeScript, and lint behavior.
 
-- Stack: Nuxt 4 + Vue 3 + TypeScript + UnoCSS + Nuxt Content + motion-v
-- Package manager: pnpm (see `packageManager` in [package.json](package.json))
-- Deployment: Vercel (see [vercel.json](vercel.json))
+## Build, Test, and Development Commands
 
-## Fast Start Commands
+Use pnpm 11, as pinned in `package.json`.
 
-- Install: `pnpm install`
-- Dev server: `pnpm dev`
-- Build: `pnpm build`
-- Preview: `pnpm preview`
-- Typecheck: `pnpm typecheck`
-- Lint: `pnpm lint`
-- Format: `pnpm format`
-- Generate static: `pnpm generate`
-- Generate new post scaffold: `pnpm generate:post`
+- `pnpm install --frozen-lockfile` installs the exact locked dependencies.
+- `pnpm dev` starts the local Nuxt development server.
+- `pnpm build` creates the production server build; `pnpm generate` produces
+  the prerendered output used by CI.
+- `pnpm preview` serves a completed build locally.
+- `pnpm lint` runs ESLint; `pnpm format` applies Oxfmt, and
+  `pnpm format:check` verifies formatting without edits.
+- `pnpm typecheck` runs Nuxt/Vue TypeScript checks.
+- `pnpm generate:post` interactively scaffolds a Markdown post.
 
-## High-Signal File Map
+## Coding Style & Naming Conventions
 
-- Nuxt app config: [nuxt.config.ts](nuxt.config.ts)
-- Lint config: [eslint.config.mjs](eslint.config.mjs)
-- UnoCSS config: [uno.config.ts](uno.config.ts)
-- Global tokens: [app/styles/vars.css](app/styles/vars.css)
-- Global styles/utilities: [app/styles/index.css](app/styles/index.css)
-- Dark mode logic: [app/composables/dark.ts](app/composables/dark.ts)
-- Home UI patterns: [app/components/home/Hero.vue](app/components/home/Hero.vue)
-- Post listing pattern: [app/pages/posts.vue](app/pages/posts.vue)
-- Content source: [content/posts](content/posts)
+Follow `.editorconfig`: UTF-8, LF endings, two-space indentation, and a final
+newline. Oxfmt enforces 80-column output, single quotes, no semicolons, and
+trailing commas. Use Vue Composition API with `<script setup lang="ts">`.
+Name Vue components in PascalCase (`ProjectItem.vue`), TypeScript values in
+camelCase, and interfaces/types in PascalCase. Keep route filenames aligned
+with their URLs, including Nuxt dynamic syntax such as `[...slug].vue`.
 
-## Architecture Boundaries
+## Testing Guidelines
 
-- UI app code lives in [app](app)
-- Route views live in [app/pages](app/pages)
-- Reusable components live in [app/components/home](app/components/home) and [app/components/ui](app/components/ui)
-- Layout shells live in [app/layouts](app/layouts)
-- Markdown content lives in [content/posts](content/posts)
-- Utility scripts live in [scripts](scripts)
+There is currently no dedicated unit-test framework or `test` script. Treat
+`pnpm lint`, `pnpm format:check`, `pnpm generate`, and `pnpm typecheck` as the
+required validation suite; these mirror CI. For UI changes, also inspect the
+affected route in light and dark modes at mobile and desktop widths.
 
-## Coding Conventions
+## Commit & Pull Request Guidelines
 
-- Use Vue Composition API with `<script lang="ts" setup>`.
-- Keep components typed with `defineProps` and explicit event types.
-- Prefer existing design tokens and utility classes over ad-hoc colors/spacings.
-- Prefer UnoCSS utility classes (including arbitrary values) instead of inline `style` attributes or `<style>` blocks in Vue SFCs.
-- Prefer motion-v `Motion` patterns already used in the codebase for animation.
-- Keep dark mode compatibility (`.dark` tokens and `toggleDark` behavior) intact.
-
-## Editing Rules for Agents
-
-- Keep diffs focused; avoid unrelated refactors or broad formatting.
-- Reuse existing component/style patterns before introducing new abstractions.
-- Do not add new styles in [app/styles](app/styles) unless explicitly requested by the user.
-- When changing UI, verify desktop + mobile behavior.
-- After edits, run error checks and relevant commands (`pnpm typecheck`, `pnpm lint` when needed).
-
-## Known Pitfalls
-
-- ESLint config imports generated file `.nuxt/eslint.config.mjs` from [eslint.config.mjs](eslint.config.mjs). If `.nuxt` is missing, run `pnpm install` or `pnpm dev`/`nuxt prepare` first.
-- Do not hand-edit dependency versions without updating lockfile. Vercel uses frozen lockfile install.
-- Keep markdown content under [content/posts](content/posts) to avoid unintended indexing.
-
-## References
-
-- Project overview: [README.md](README.md)
-- Nuxt config behavior: [nuxt.config.ts](nuxt.config.ts)
-- Content collection setup: [content.config.ts](content.config.ts)
+History follows concise Conventional Commit-style subjects: `feat: ...`,
+`fix: ...`, `chore(deps): ...`, and `ci: ...`. Keep each commit focused and use
+an imperative summary. Pull requests should explain the user-visible change,
+list validation commands run, link relevant issues, and include before/after
+screenshots for visual work. Do not commit generated directories such as
+`.nuxt/`, `.output/`, `.data/`, `.vercel/`, or local `.env` files.

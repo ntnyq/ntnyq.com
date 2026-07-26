@@ -1,19 +1,63 @@
+<script setup lang="ts">
+useHead({
+  title: 'Sponsor — ntnyq',
+})
+</script>
+
 <template>
-  <div class="site-shell flex-center flex-1 xl:text-lg">
-    <Motion
-      :initial="{ opacity: 0, y: 18, scale: 0.98 }"
-      :animate="{ opacity: 1, y: 0, scale: 1 }"
-      :transition="{ type: 'spring', stiffness: 180, damping: 20 }"
-      as="div"
-      class="surface-card relative flex flex-col items-center gap-4 p-7"
-    >
-      <p class="section-kicker">Support</p>
-      <h2 class="section-title text-2xl font-semibold">Wechat</h2>
+  <div class="content-frame page-wrap">
+    <header class="page-header">
+      <h1 class="page-title">Sponsor</h1>
+      <p class="page-description">
+        If one of my open-source projects has helped you, you can support its
+        continued maintenance through WeChat.
+      </p>
+    </header>
+
+    <figure class="sponsor-figure">
       <img
-        class="mx-auto block max-w-300px rounded-lg"
         src="/images/sponsor/wechat.png"
-        alt="Wechat Sponsor QRCode"
+        alt="WeChat sponsor QR code"
       />
-    </Motion>
+      <figcaption>Scan with WeChat. Thank you!</figcaption>
+    </figure>
+
+    <NuxtLink
+      to="/projects"
+      class="soft-link back-link focus-ring"
+    >
+      <span
+        class="i-ri:arrow-left-line"
+        aria-hidden="true"
+      />
+      Back to projects
+    </NuxtLink>
   </div>
 </template>
+
+<style scoped>
+.sponsor-figure {
+  width: min(100%, 16rem);
+  margin: 0 0 2rem;
+}
+
+.sponsor-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+.sponsor-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--c-muted);
+  font-size: 0.8rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+</style>

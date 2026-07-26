@@ -1,26 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Sora:wght@600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap");
 
-/* Base style */
+html {
+  background: var(--c-bg);
+  scroll-behavior: smooth;
+}
 
 body {
+  min-width: 320px;
+  margin: 0;
   color: var(--c-fg);
-  font-family: var(--font-body);
-  background-color: var(--c-bg);
-  background-image:
-    radial-gradient(
-      120rem 120rem at 90% -10%,
-      color-mix(in oklab, var(--c-accent) 16%, transparent),
-      transparent 40%
-    ),
-    radial-gradient(
-      90rem 90rem at -10% 0%,
-      color-mix(in oklab, var(--c-accent) 12%, transparent),
-      transparent 35%
-    );
-  background-attachment: fixed;
-  transition:
-    background-color 220ms ease,
-    color 220ms ease;
+  font-family: var(--font-sans);
+  background: var(--c-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -28,62 +20,110 @@ body {
   scrollbar-color: var(--c-scrollbar) var(--c-bg);
 }
 
+::selection {
+  background: rgba(125, 125, 125, 0.25);
+}
+
 a {
   color: inherit;
 }
 
-.site-shell {
-  width: min(76ch, calc(100% - 3rem));
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-frame {
+  width: min(42rem, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.content-frame {
+  width: min(40rem, 100% - 3rem);
   margin-inline: auto;
 }
 
 .page-wrap {
-  padding-block: clamp(2.5rem, 7vh, 5.5rem);
+  padding-block: 2.5rem 4rem;
 }
 
-.section-title {
-  font-family: var(--font-display);
-  letter-spacing: -0.02em;
+.page-header {
+  margin-bottom: 2.5rem;
 }
 
-.section-kicker {
-  margin-bottom: 0.75rem;
+.page-title {
+  margin: 0;
+  color: var(--c-fg-deep);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.page-description {
+  margin: 0.9rem 0 0;
   color: var(--c-muted);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.surface-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--c-border);
-  border-radius: 1rem;
-  background: color-mix(in srgb, var(--c-surface) 90%, transparent);
-  box-shadow: 0 16px 36px -24px var(--c-shadow);
-}
-
-.glow-track::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    11rem circle at var(--mx, 50%) var(--my, 50%),
-    color-mix(in srgb, var(--c-accent) 20%, transparent),
-    transparent 62%
-  );
-  transition: opacity 220ms ease;
-}
-
-.glow-track:hover::before {
-  opacity: 1;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 .muted-copy {
   color: var(--c-muted);
+}
+
+/* Plain link: dims by default, solid on hover */
+.soft-link {
+  color: inherit;
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.soft-link:hover {
+  opacity: 1;
+}
+
+/* Prose-style link: subtle underline that darkens on hover */
+.text-link {
+  border-bottom: 1px solid var(--c-border);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.text-link:hover {
+  border-bottom-color: var(--c-fg);
+  color: var(--c-fg-deep);
+}
+
+/* Giant outlined label, antfu.me style */
+.ghost-block {
+  position: relative;
+  height: 3.6rem;
+  pointer-events: none;
+}
+
+.ghost-block span {
+  position: absolute;
+  top: -1.8rem;
+  left: -2.8rem;
+  color: transparent;
+  font-size: 7.5em;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-text-stroke: 2px var(--c-ghost-stroke);
 }
 
 .focus-ring {
@@ -91,48 +131,156 @@ a {
 }
 
 .focus-ring:focus-visible {
+  border-radius: 0.25rem;
   box-shadow:
-    0 0 0 2px var(--c-bg),
-    0 0 0 4px var(--c-accent);
+    0 0 0 3px var(--c-bg),
+    0 0 0 5px var(--c-border);
 }
 
-.hover-lift {
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 0.85rem;
+  border-radius: 0.45rem;
+  color: var(--c-bg);
+  background: var(--c-fg-deep);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.prose {
+  max-width: none;
+  color: var(--c-fg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* @unocss/preset-typography ships light-only gray defaults with higher
+   specificity — remap all of its color tokens to the site palette so
+   prose follows light/dark automatically */
+html .prose {
+  --un-prose-body: var(--c-fg);
+  --un-prose-headings: var(--c-fg-deep);
+  --un-prose-lead: var(--c-muted);
+  --un-prose-links: var(--c-fg-deep);
+  --un-prose-bold: var(--c-fg-deep);
+  --un-prose-counters: var(--c-muted);
+  --un-prose-bullets: var(--c-muted);
+  --un-prose-hr: var(--c-border-soft);
+  --un-prose-quotes: var(--c-muted);
+  --un-prose-quote-borders: var(--c-border-soft);
+  --un-prose-captions: var(--c-muted);
+  --un-prose-kbd: var(--c-fg-deep);
+  --un-prose-code: var(--c-fg-deep);
+  --un-prose-pre-code: var(--c-fg);
+  --un-prose-pre-bg: var(--c-code-bg);
+  --un-prose-th-borders: var(--c-border);
+  --un-prose-td-borders: var(--c-border-soft);
+  max-width: none;
+  color: var(--c-fg);
+}
+
+.prose :where(h1, h2, h3, h4) {
+  color: var(--c-fg-deep);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.prose :where(a) {
+  border-bottom: 1px solid var(--c-border);
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
   transition:
-    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    background-color 220ms ease;
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.hover-lift:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--c-accent) 36%, var(--c-border));
-  box-shadow: 0 24px 42px -24px var(--c-shadow);
+.prose :where(a):hover {
+  border-bottom-color: var(--c-fg);
+  color: var(--c-fg-deep);
 }
 
-@media (max-width: 768px) {
-  .site-shell {
-    width: min(76ch, calc(100% - 2rem));
+.prose :where(strong) {
+  color: var(--c-fg-deep);
+  font-weight: 500;
+}
+
+.prose :where(blockquote) {
+  border-left: 3px solid var(--c-border-soft);
+  color: var(--c-muted);
+  font-style: italic;
+}
+
+.prose :where(hr) {
+  border-color: var(--c-border-soft);
+}
+
+.prose :where(code):not(:where(pre *)) {
+  border-radius: 0.25rem;
+  padding: 0.15rem 0.35rem;
+  color: var(--c-fg-deep);
+  background: var(--c-code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}
+
+.prose :where(pre) {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  padding: 1.1rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  line-height: 1.7;
+}
+
+/* Shiki dual themes: soft background in light mode (vitesse-light is
+   pure white), dark palette when .dark is set.
+   @see https://shiki.style/guide/dual-themes */
+html:not(.dark) .shiki {
+  background-color: var(--c-code-bg) !important;
+}
+
+.dark .shiki {
+  /* Nuxt Content strips shiki's inline style from <pre>, so fall back
+     to the site code background when --shiki-dark-bg is missing */
+  background-color: var(--shiki-dark-bg, var(--c-code-bg)) !important;
+}
+
+.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+@media (max-width: 620px) {
+  .site-frame,
+  .content-frame {
+    width: min(100% - 2rem, 42rem);
   }
 
-  .page-wrap {
-    padding-block: clamp(2rem, 5.5vh, 3.2rem);
-  }
-
-  .section-title {
-    letter-spacing: -0.01em;
-  }
-
-  .surface-card {
-    border-radius: 0.9rem;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-2px);
+  .ghost-block span {
+    left: -1rem;
+    font-size: 5.5em;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
@@ -141,13 +289,10 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  .hover-lift:hover {
-    transform: none;
-  }
 }
 
-/* Color Mode transition */
+/* Theme toggle: the new theme always expands from the click point,
+   so the new snapshot stays on top in both directions */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -160,12 +305,4 @@ a {
 
 ::view-transition-new(root) {
   z-index: 2147483646;
-}
-
-.dark::view-transition-old(root) {
-  z-index: 2147483646;
-}
-
-.dark::view-transition-new(root) {
-  z-index: 1;
 }

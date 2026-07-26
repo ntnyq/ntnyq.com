@@ -1,11 +1,18 @@
 <template>
-  <div class="relative min-h-screen flex flex-col">
+  <div class="site-app">
+    <a
+      class="skip-link"
+      href="#main-content"
+    >
+      Skip to content
+    </a>
     <Navbar />
-    <div class="site-shell page-wrap w-full flex-1">
-      <NuxtPage />
-    </div>
-    <div class="site-shell pb-8">
-      <Footer />
-    </div>
+    <main
+      id="main-content"
+      class="site-main"
+    >
+      <slot />
+    </main>
+    <Footer />
   </div>
 </template>
