@@ -1,5 +1,5 @@
 /**
- * @file @nuxt/content config
+ * @file `@nuxt/content` config
  * @see {@link https://content.nuxt.com}
  */
 

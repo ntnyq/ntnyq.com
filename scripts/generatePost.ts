@@ -51,7 +51,7 @@ export async function generatePost() {
         },
       ],
       {
-        onCancel: () => {
+        onCancel() {
           throw new Error(`${colors.red('✖')} Operation cancelled`)
         },
       },
