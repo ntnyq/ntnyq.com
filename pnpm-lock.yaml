@@ -207,7 +207,7 @@ importers:
         specifier: ^1.2.10
         version: 1.2.10
       '@iconify-json/vscode-icons':
-        specifier: ^1.2.81
+        specifier: ^1.2.82
         version: 1.2.83
       '@ntnyq/eslint-config':
         specifier: ^7.0.0-beta.22
@@ -240,7 +240,7 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       motion-v:
-        specifier: ^2.4.4
+        specifier: ^2.5.0
         version: 2.5.1(@vueuse/core@15.0.0(vue@3.5.42(typescript@6.0.3)))(vue@3.5.42(typescript@6.0.3))
       nano-staged:
         specifier: ^1.0.2
