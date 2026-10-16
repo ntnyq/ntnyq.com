@@ -43,7 +43,10 @@ const groups = computed(() => {
     map.set(year, items)
   }
 
-  return [...map.entries()].map(([year, items]) => ({ items, year }))
+  return [...map.entries()].map(([year, items]) => ({
+    items,
+    year,
+  }))
 })
 
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
