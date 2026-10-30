@@ -1,5 +1,5 @@
 <template>
-  <div class="site-app">
+  <div class="min-h-screen flex flex-col">
     <a
       class="skip-link"
       href="#main-content"
@@ -9,7 +9,7 @@
     <Navbar />
     <main
       id="main-content"
-      class="site-main"
+      class="flex-1"
     >
       <slot />
     </main>

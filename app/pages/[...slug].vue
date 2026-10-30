@@ -35,68 +35,37 @@ useHead({
 </script>
 
 <template>
-  <article class="content-frame article-page">
-    <header class="article-header">
-      <h1>{{ page?.title || page?.stem }}</h1>
+  <article class="content-frame pb-16 pt-10">
+    <header>
+      <h1
+        class="m-0 text-1.8rem text-$c-fg-deep font-400 leading-[1.3] tracking--0.01em"
+      >
+        {{ page?.title || page?.stem }}
+      </h1>
       <time
         v-if="postDate"
         :datetime="postDate.toISOString()"
+        class="mt-0.6rem block text-0.85rem text-$c-muted font-mono"
       >
         {{ dateFormatter.format(postDate) }}
       </time>
     </header>
 
+    <!-- The post title is already rendered in the header. -->
     <ContentRenderer
       v-if="page"
       :value="page"
-      class="article-body prose"
+      class="pb-12 pt-8 prose [&_h1:first-child]:hidden"
       prose
     />
 
-    <footer class="article-footer">
+    <footer>
       <NuxtLink
         to="/posts"
-        class="soft-link focus-ring"
+        class="soft-link text-0.9rem font-mono focus-ring"
       >
         &gt; cd ..
       </NuxtLink>
     </footer>
   </article>
 </template>
-
-<style scoped>
-.article-page {
-  padding-block: 2.5rem 4rem;
-}
-
-.article-header h1 {
-  margin: 0;
-  color: var(--c-fg-deep);
-  font-size: 1.8rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-}
-
-.article-header time {
-  display: block;
-  margin-top: 0.6rem;
-  color: var(--c-muted);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-
-.article-body {
-  padding-block: 2rem 3rem;
-}
-
-/* The title is already rendered in the header above */
-.article-body :deep(h1:first-child) {
-  display: none;
-}
-
-.article-footer a {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-}
-</style>

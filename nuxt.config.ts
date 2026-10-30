@@ -4,7 +4,7 @@
  */
 
 import process from 'node:process'
-import { META } from './app/composables/constants'
+import { META } from './app/composables/constants.ts'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-10',
@@ -79,6 +79,8 @@ export default defineNuxtConfig({
   experimental: {
     appManifest: false,
     clientNodeCompat: true,
+    // Nuxt Content's server handlers still depend on Nitro's #imports.
+    nitroAutoImports: true,
     payloadExtraction: 'client',
     renderJsonPayloads: true,
     typedPages: true,
@@ -139,6 +141,14 @@ export default defineNuxtConfig({
     registerType: 'autoUpdate',
     registerWebManifestInRouteRules: true,
     scope: '/',
+    integration: {
+      beforeBuildServiceWorker(options) {
+        // The JSON glob below already covers payloads when they are generated.
+        options.workbox.globPatterns = options.workbox.globPatterns?.filter(
+          pattern => pattern !== '**/_payload.json',
+        )
+      },
+    },
     manifest: {
       background_color: '#ffffff',
       description: META.appDescription,

@@ -33,26 +33,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.site-app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.site-main {
-  flex: 1;
-}
-
-.site-frame {
-  width: min(42rem, 100% - 3rem);
-  margin-inline: auto;
-}
-
-.content-frame {
-  width: min(40rem, 100% - 3rem);
-  margin-inline: auto;
-}
-
 .page-wrap {
   padding-block: 2.5rem 4rem;
 }
@@ -77,10 +57,6 @@ a {
   line-height: 1.7;
 }
 
-.muted-copy {
-  color: var(--c-muted);
-}
-
 /* Plain link: dims by default, solid on hover */
 .soft-link {
   color: inherit;
@@ -91,39 +67,6 @@ a {
 
 .soft-link:hover {
   opacity: 1;
-}
-
-/* Prose-style link: subtle underline that darkens on hover */
-.text-link {
-  border-bottom: 1px solid var(--c-border);
-  color: inherit;
-  text-decoration: none;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.text-link:hover {
-  border-bottom-color: var(--c-fg);
-  color: var(--c-fg-deep);
-}
-
-/* Giant outlined label, antfu.me style */
-.ghost-block {
-  position: relative;
-  height: 3.6rem;
-  pointer-events: none;
-}
-
-.ghost-block span {
-  position: absolute;
-  top: -1.8rem;
-  left: -2.8rem;
-  color: transparent;
-  font-size: 7.5em;
-  font-weight: 700;
-  line-height: 1;
-  -webkit-text-stroke: 2px var(--c-ghost-stroke);
 }
 
 .focus-ring {
@@ -262,18 +205,6 @@ html:not(.dark) .shiki {
   font-style: var(--shiki-dark-font-style) !important;
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
-}
-
-@media (max-width: 620px) {
-  .site-frame,
-  .content-frame {
-    width: min(100% - 2rem, 42rem);
-  }
-
-  .ghost-block span {
-    left: -1rem;
-    font-size: 5.5em;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

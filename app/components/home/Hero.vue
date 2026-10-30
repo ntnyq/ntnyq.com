@@ -1,12 +1,12 @@
 <template>
-  <section class="hero prose">
-    <h1>Hi, I'm ntnyq</h1>
-    <p>
+  <section class="pt-10 prose">
+    <h1 class="m-0 mb-6 text-2rem">Hi, I'm ntnyq</h1>
+    <p class="m-0 mb-1.1rem">
       A front-end developer. I spend most of my time with
       <strong>TypeScript</strong>, <strong>Vue</strong>, and the tooling around
       them.
     </p>
-    <p>
+    <p class="m-0 mb-1.1rem">
       I maintain
       <NuxtLink to="/projects">open-source projects</NuxtLink>
       for linting, parsing, types, and browser extensions. This is where I keep
@@ -14,14 +14,15 @@
       <NuxtLink to="/posts">notes</NuxtLink>
       I write along the way.
     </p>
-    <p>
+    <p class="m-0 mb-1.1rem">
       Currently learning TypeScript and Nuxt, while maintaining a small family
       of developer tools.
     </p>
-    <p class="find-me">
+    <p class="m-0 mb-1.1rem flex flex-wrap items-center gap-x-4 gap-y-0.4rem">
       Find me on
       <a
         href="https://github.com/ntnyq"
+        class="inline-flex items-center gap-0.35rem"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -33,6 +34,7 @@
       </a>
       <a
         href="https://bsky.app/profile/ntnyq.com"
+        class="inline-flex items-center gap-0.35rem"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -44,6 +46,7 @@
       </a>
       <a
         href="https://twitter.com/ntnyq"
+        class="inline-flex items-center gap-0.35rem"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -55,6 +58,7 @@
       </a>
       <a
         href="https://space.bilibili.com/40199161"
+        class="inline-flex items-center gap-0.35rem"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -65,38 +69,10 @@
         Bilibili
       </a>
     </p>
-    <p class="muted-copy">
+    <p class="m-0 mb-1.1rem text-$c-muted">
       If my work has helped you, consider
       <NuxtLink to="/sponsor">sponsoring me</NuxtLink>
       to keep it sustainable.
     </p>
   </section>
 </template>
-
-<style scoped>
-.hero {
-  padding-top: 2.5rem;
-}
-
-.hero h1 {
-  margin: 0 0 1.5rem;
-  font-size: 2rem;
-}
-
-.hero p {
-  margin: 0 0 1.1rem;
-}
-
-.find-me {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4rem 1rem;
-}
-
-.find-me a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-</style>

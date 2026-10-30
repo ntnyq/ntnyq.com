@@ -7,29 +7,32 @@ useHead({
 </script>
 
 <template>
-  <div class="site-frame page-wrap">
+  <div class="page-wrap site-frame">
     <header class="page-header">
       <h1 class="page-title">Projects</h1>
       <p class="page-description">
-        Open-source tools I've built or maintain, mostly around linting, types,
-        SVG, and front-end development.
+        Open-source projects I build and maintain, from linting and developer
+        tools to browser extensions and native desktop apps.
       </p>
     </header>
 
     <section
       v-for="group in PROJECT_GROUPS"
       :key="group.title"
-      class="project-group"
+      class="mt-12 first-of-type:mt-0"
     >
       <div
-        class="ghost-block group-ghost"
+        class="pointer-events-none relative h-2.8rem"
         aria-hidden="true"
       >
-        <span>{{ group.title }}</span>
+        <span
+          class="absolute left--0.5rem top--0.9rem text-2.6em text-transparent font-700 leading-none text-stroke-1.5 text-stroke-$c-ghost-stroke sm:left--1.6rem sm:text-3.4em"
+          >{{ group.title }}</span
+        >
       </div>
-      <h2 class="visually-hidden">{{ group.title }}</h2>
+      <h2 class="sr-only">{{ group.title }}</h2>
 
-      <div class="group-grid">
+      <div class="grid grid-cols-1 mx--4 gap-x-4 gap-y-1 sm:grid-cols-2">
         <ProjectItem
           v-for="item in group.projects"
           :key="item.name"
@@ -39,48 +42,3 @@ useHead({
     </section>
   </div>
 </template>
-
-<style scoped>
-.project-group + .project-group {
-  margin-top: 3rem;
-}
-
-.group-ghost {
-  height: 2.8rem;
-}
-
-.group-ghost span {
-  top: -0.9rem;
-  left: -1.6rem;
-  font-size: 3.4em;
-  -webkit-text-stroke-width: 1.5px;
-}
-
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.group-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.25rem 1rem;
-  margin-inline: -1rem;
-}
-
-@media (max-width: 620px) {
-  .group-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .group-ghost span {
-    left: -0.5rem;
-    font-size: 2.6em;
-  }
-}
-</style>

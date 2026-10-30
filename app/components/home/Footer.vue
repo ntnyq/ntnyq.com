@@ -12,20 +12,24 @@ const commitUrl = computed(() => {
 </script>
 
 <template>
-  <footer class="site-footer">
-    <div class="site-frame footer-inner">
-      <p>CC BY-NC-SA 4.0 2024—PRESENT © ntnyq</p>
-      <div>
+  <footer class="mt-auto pb-10 pt-8">
+    <div
+      class="site-frame flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center"
+    >
+      <p class="m-0 text-0.78rem text-$c-muted">
+        CC BY-NC-SA 4.0 2024—PRESENT © ntnyq
+      </p>
+      <div class="flex items-center gap-4">
         <NuxtLink
           to="/sponsor"
-          class="soft-link"
+          class="soft-link m-0 text-0.78rem text-$c-muted"
         >
           Sponsor
         </NuxtLink>
         <NuxtLink
           v-if="commitUrl && shortCommitSha"
           :to="commitUrl"
-          class="soft-link"
+          class="soft-link m-0 text-0.78rem text-$c-muted"
           target="_blank"
           rel="noopener noreferrer"
           external
@@ -36,39 +40,3 @@ const commitUrl = computed(() => {
     </div>
   </footer>
 </template>
-
-<style scoped>
-.site-footer {
-  margin-top: auto;
-  padding-block: 2rem 2.5rem;
-}
-
-.footer-inner,
-.footer-inner div {
-  display: flex;
-  align-items: center;
-}
-
-.footer-inner {
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.footer-inner div {
-  gap: 1rem;
-}
-
-.footer-inner p,
-.footer-inner a {
-  margin: 0;
-  color: var(--c-muted);
-  font-size: 0.78rem;
-}
-
-@media (max-width: 520px) {
-  .footer-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-</style>

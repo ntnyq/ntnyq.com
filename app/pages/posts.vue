@@ -60,7 +60,7 @@ useHead({
 </script>
 
 <template>
-  <div class="site-frame page-wrap">
+  <div class="page-wrap site-frame">
     <header class="page-header">
       <h1 class="page-title">Posts</h1>
     </header>
@@ -69,30 +69,35 @@ useHead({
       <section
         v-for="group in groups"
         :key="group.year"
-        class="post-group"
+        class="not-first:mt-10"
       >
         <div
           v-if="group.year"
-          class="ghost-block"
+          class="pointer-events-none relative h-3.6rem"
           aria-hidden="true"
         >
-          <span>{{ group.year }}</span>
+          <span
+            class="absolute left--4 top--1.8rem text-5.5em text-transparent font-700 leading-none text-stroke-2 text-stroke-$c-ghost-stroke sm:left--2.8rem sm:text-7.5em"
+            >{{ group.year }}</span
+          >
         </div>
 
-        <ul class="post-list">
+        <ul class="m-0 list-none p-0">
           <li
             v-for="post in group.items"
             :key="post.path"
           >
             <NuxtLink
               :to="post.path"
-              class="post-link focus-ring"
+              class="flex items-baseline gap-3 py-0.55rem no-underline opacity-80 transition-opacity duration-200 ease-[ease] hover:opacity-100 focus-ring"
             >
-              <span class="post-title">{{ post.title }}</span>
+              <span class="text-1.05rem text-$c-fg-deep leading-[1.4]">{{
+                post.title
+              }}</span>
               <time
                 v-if="post.date"
                 :datetime="post.date.toISOString()"
-                class="post-date"
+                class="flex-none text-0.8rem text-$c-muted font-mono"
               >
                 {{ dateFormatter.format(post.date) }}
               </time>
@@ -104,48 +109,9 @@ useHead({
 
     <p
       v-else
-      class="muted-copy"
+      class="text-$c-muted"
     >
       Nothing here yet.
     </p>
   </div>
 </template>
-
-<style scoped>
-.post-group + .post-group {
-  margin-top: 2.5rem;
-}
-
-.post-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.post-link {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  padding-block: 0.55rem;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-}
-
-.post-link:hover {
-  opacity: 1;
-}
-
-.post-title {
-  color: var(--c-fg-deep);
-  font-size: 1.05rem;
-  line-height: 1.4;
-}
-
-.post-date {
-  flex: none;
-  color: var(--c-muted);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-}
-</style>

@@ -5,7 +5,7 @@ useHead({
 </script>
 
 <template>
-  <div class="content-frame page-wrap">
+  <div class="page-wrap content-frame">
     <header class="page-header">
       <h1 class="page-title">Sponsor</h1>
       <p class="page-description">
@@ -14,17 +14,20 @@ useHead({
       </p>
     </header>
 
-    <figure class="sponsor-figure">
+    <figure class="m-0 mb-8 max-w-64 w-full">
       <img
         src="/images/sponsor/wechat.png"
         alt="WeChat sponsor QR code"
+        class="block h-auto w-full rounded-xl"
       />
-      <figcaption>Scan with WeChat. Thank you!</figcaption>
+      <figcaption class="mt-3 text-0.8rem text-$c-muted">
+        Scan with WeChat. Thank you!
+      </figcaption>
     </figure>
 
     <NuxtLink
       to="/projects"
-      class="soft-link back-link focus-ring"
+      class="soft-link inline-flex items-center gap-0.35rem text-0.9rem focus-ring"
     >
       <span
         class="i-ri:arrow-left-line"
@@ -34,30 +37,3 @@ useHead({
     </NuxtLink>
   </div>
 </template>
-
-<style scoped>
-.sponsor-figure {
-  width: min(100%, 16rem);
-  margin: 0 0 2rem;
-}
-
-.sponsor-figure img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0.75rem;
-}
-
-.sponsor-figure figcaption {
-  margin-top: 0.75rem;
-  color: var(--c-muted);
-  font-size: 0.8rem;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.9rem;
-}
-</style>

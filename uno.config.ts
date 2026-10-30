@@ -57,6 +57,10 @@ export default defineConfig({
     'flex-center': 'flex items-center justify-center',
     'flex-col-center': 'flex-center flex-col',
     'wh-full': 'w-full h-full',
+    'content-frame':
+      'mx-auto w-[calc(100%-2rem)] max-w-160 sm:w-[calc(100%-3rem)]',
+    'site-frame':
+      'mx-auto w-[calc(100%-2rem)] max-w-168 sm:w-[calc(100%-3rem)]',
   },
 
   theme: {
