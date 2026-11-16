@@ -11,6 +11,7 @@ export default defineNuxtPlugin({
       if (!import.meta.env.DEV) {
         return
       }
+
       logger.success('App mounted')
     },
   },
