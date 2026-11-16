@@ -21,6 +21,7 @@ date: ${new Date().toISOString()}
 
 # ${title}
   `
+
   return content
 }
 
