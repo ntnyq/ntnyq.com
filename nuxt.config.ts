@@ -90,6 +90,15 @@ export default defineNuxtConfig({
     compatibilityVersion: 5,
   },
 
+  hooks: {
+    'pwa:beforeBuildServiceWorker': function (options) {
+      // The JSON glob below already covers payloads when they are generated.
+      options.generateSW.globPatterns = options.generateSW.globPatterns?.filter(
+        pattern => pattern !== '**/_payload.json',
+      )
+    },
+  },
+
   imports: {
     dirs: ['./composables', './composables/state', './utils'],
   },
@@ -138,16 +147,31 @@ export default defineNuxtConfig({
   pwa: {
     base: '/',
     injectRegister: 'auto',
+    maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
     registerType: 'autoUpdate',
     registerWebManifestInRouteRules: true,
     scope: '/',
-    integration: {
-      beforeBuildServiceWorker(options) {
-        // The JSON glob below already covers payloads when they are generated.
-        options.workbox.globPatterns = options.workbox.globPatterns?.filter(
-          pattern => pattern !== '**/_payload.json',
-        )
-      },
+    generateSW: {
+      globStrict: true,
+      // https://github.com/vite-pwa/nuxt/issues/53
+      navigateFallback: undefined,
+      globPatterns: [
+        '**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}',
+      ],
+      // Vercel serves standalone HTML files at their original paths.
+      manifestTransforms: [
+        manifest => ({
+          manifest: manifest.map(entry =>
+            entry.url === 'index.html' ? { ...entry, url: '/' } : entry,
+          ),
+        }),
+      ],
+      runtimeCaching: [
+        {
+          handler: 'NetworkFirst',
+          urlPattern: '/',
+        },
+      ],
     },
     manifest: {
       background_color: '#ffffff',
@@ -173,20 +197,6 @@ export default defineNuxtConfig({
           sizes: '512x512',
           src: '/icons/icon-512x512.png',
           type: 'image/png',
-        },
-      ],
-    },
-    workbox: {
-      maximumFileSizeToCacheInBytes: 1024 * 1024 * 5,
-      // https://github.com/vite-pwa/nuxt/issues/53
-      navigateFallback: undefined,
-      globPatterns: [
-        '**/*.{js,css,html,png,jpg,jpeg,svg,ico,json,txt,ttf,woff,woff2}',
-      ],
-      runtimeCaching: [
-        {
-          handler: 'NetworkFirst',
-          urlPattern: '/',
         },
       ],
     },

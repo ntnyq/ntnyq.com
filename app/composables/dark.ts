@@ -19,6 +19,7 @@ const supportViewTransition =
 export function toggleDark(event?: MouseEvent) {
   if (!supportViewTransition || !event) {
     isDark.value = !isDark.value
+
     return
   }
 
